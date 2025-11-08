@@ -6,6 +6,9 @@ require_once __DIR__ . '/vendor/autoload.php';
 // Initialize Timber.
 Timber\Timber::init();
 
+// Configure Timber template locations
+require_once get_template_directory() . '/includes/locations.php';
+
 /* Woocommerce Theme Suppport*/
 function theme_add_woocommerce_support()
 {
