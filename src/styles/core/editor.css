@@ -1,0 +1,14 @@
+/*
+ * Editor-only styles
+ * These styles ONLY apply in the WordPress block editor iframe
+ * Tailwind's Preflight already provides base reset for frontend
+ */
+
+/* Ensure editor matches frontend styling */
+.editor-styles-wrapper {
+  /* Editor background should match site background */
+  background-color: var(--wp--preset--color--surface);
+
+  /* Ensure editor content area uses proper spacing */
+  padding: 2rem;
+}

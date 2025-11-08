@@ -1,0 +1,44 @@
+/* Layout Components */
+
+.content {
+  max-width: var(--container-3xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing) * 8);
+  padding-right: calc(var(--spacing) * 8);
+}
+
+.content-wide {
+  max-width: var(--container-7xl);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing) * 8);
+  padding-right: calc(var(--spacing) * 8);
+}
+
+.content-full {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: calc(var(--spacing) * 8);
+  padding-right: calc(var(--spacing) * 8);
+}
+
+.section {
+  padding-top: calc(var(--spacing) * 12);
+  padding-bottom: calc(var(--spacing) * 12);
+}
+
+.section-first {
+  padding-top: calc(var(--spacing) * 32);
+  padding-bottom: calc(var(--spacing) * 12);
+}
+
+.section-hero {
+  padding-top: calc(var(--spacing) * 24);
+  padding-bottom: calc(var(--spacing) * 24);
+}
+
+.section-compact {
+  padding-top: calc(var(--spacing) * 6);
+  padding-bottom: calc(var(--spacing) * 6);
+}

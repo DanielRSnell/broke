@@ -1,0 +1,18 @@
+{#
+/**
+ * Partial: Related Posts
+ * Description: Related posts section
+ * Context: related_posts (array from context filter in src/context/related.php)
+ * Usage: {% include 'partials/related-posts.twig' %}
+ */
+#}
+
+{% if related_posts %}
+<section class="related-posts">
+	<h2>Related Posts</h2>
+	<div class="related-posts-grid">
+		{# Related posts loop #}
+
+	</div>
+</section>
+{% endif %}

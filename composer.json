@@ -1,0 +1,15 @@
+{
+  "name": "blank-theme/wordpress-theme",
+  "description": "Blank Theme - Universal Block WordPress Theme",
+  "type": "wordpress-theme",
+  "require": {
+    "php": ">=7.4",
+    "erusev/parsedown": "^1.7",
+    "timber/timber": "^2.3"
+  },
+  "autoload": {
+    "files": [
+      "vendor/autoload.php"
+    ]
+  }
+}

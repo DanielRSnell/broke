@@ -1,0 +1,34 @@
+{
+  "name": "@universal-blocks/html2pattern",
+  "version": "1.0.0",
+  "description": "CLI tool to convert HTML files to WordPress block patterns",
+  "main": "src/index.js",
+  "bin": {
+    "html2pattern": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "node bin/cli.js --help",
+    "link": "npm link"
+  },
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "blocks",
+    "patterns",
+    "html",
+    "converter",
+    "cli"
+  ],
+  "author": "",
+  "license": "GPL-2.0-or-later",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "chalk": "^4.1.2",
+    "jsdom": "^23.0.0",
+    "glob": "^10.0.0"
+  },
+  "devDependencies": {}
+}

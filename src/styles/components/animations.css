@@ -1,0 +1,81 @@
+/* Animations for Umbral theme */
+
+/* Letter reveal animation */
+@keyframes letterReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.letter-reveal span {
+  display: inline-block;
+  opacity: 0;
+  animation: letterReveal 0.5s ease forwards;
+}
+
+.letter-reveal span:nth-child(1) { animation-delay: 0.05s; }
+.letter-reveal span:nth-child(2) { animation-delay: 0.1s; }
+.letter-reveal span:nth-child(3) { animation-delay: 0.15s; }
+.letter-reveal span:nth-child(4) { animation-delay: 0.2s; }
+.letter-reveal span:nth-child(5) { animation-delay: 0.25s; }
+.letter-reveal span:nth-child(6) { animation-delay: 0.3s; }
+.letter-reveal span:nth-child(7) { animation-delay: 0.35s; }
+.letter-reveal span:nth-child(8) { animation-delay: 0.4s; }
+.letter-reveal span:nth-child(9) { animation-delay: 0.45s; }
+.letter-reveal span:nth-child(10) { animation-delay: 0.5s; }
+.letter-reveal span:nth-child(n+11) { animation-delay: 0.55s; }
+
+/* Floating background animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  25% {
+    transform: translateY(-20px) translateX(10px);
+  }
+  50% {
+    transform: translateY(-10px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(5px);
+  }
+}
+
+.floating-bg {
+  animation: float 20s ease-in-out infinite;
+}
+
+/* Fade in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Slide up animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-up {
+  animation: slideUp 0.6s ease-out;
+}

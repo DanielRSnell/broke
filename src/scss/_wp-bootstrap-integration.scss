@@ -1,0 +1,25 @@
+// Bootstrap color overrides matching WordPress theme.json
+// These values are synchronized with theme.json palette
+$primary: #0d6efd !default;
+$secondary: #6c757d !default;
+$success: #198754 !default;
+$danger: #dc3545 !default;
+$warning: #ffc107 !default;
+$info: #0dcaf0 !default;
+$light: #f8f9fa !default;
+$dark: #212529 !default;
+
+// Bootstrap spacing matching WP spacing scale from theme.json
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: 0.25rem,
+  // matches theme.json spacing "1"
+  2: 0.5rem,
+  // matches theme.json spacing "2"
+  3: 1rem,
+  // matches theme.json spacing "3"
+  4: 1.5rem,
+  // matches theme.json spacing "4"
+  5: 3rem, // matches theme.json spacing "5"
+) !default;

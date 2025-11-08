@@ -1,0 +1,55 @@
+/* Theme Color Definitions */
+/* All values reference WordPress theme.json presets */
+/* Single source of truth: theme.json */
+
+@theme {
+  /* Brand Colors - Reference WordPress presets */
+  --color-primary: var(--wp--preset--color--primary);
+  --color-accent: var(--wp--preset--color--accent);
+  --color-accent-content: var(--wp--preset--color--accent-content);
+  --color-accent-hover: var(--wp--preset--color--accent-hover);
+
+  /* Base sand palette */
+  --color-base-50: var(--wp--preset--color--base-50);
+  --color-base-100: var(--wp--preset--color--base-100);
+  --color-base-200: var(--wp--preset--color--base-200);
+  --color-base-300: var(--wp--preset--color--base-300);
+
+  /* Primary neutral palette */
+  --color-primary-50: var(--wp--preset--color--primary-50);
+  --color-primary-75: var(--wp--preset--color--primary-75);
+  --color-primary-100: var(--wp--preset--color--primary-100);
+  --color-primary-200: var(--wp--preset--color--primary-200);
+  --color-primary-300: var(--wp--preset--color--primary-300);
+  --color-primary-400: var(--wp--preset--color--primary-400);
+  --color-primary-500: var(--wp--preset--color--primary-500);
+  --color-primary-600: var(--wp--preset--color--primary-600);
+  --color-primary-700: var(--wp--preset--color--primary-700);
+  --color-primary-800: var(--wp--preset--color--primary-800);
+  --color-primary-900: var(--wp--preset--color--primary-900);
+  --color-primary-950: var(--wp--preset--color--primary-950);
+
+  /* Semantic aliases */
+  --color-surface: var(--wp--preset--color--surface);
+  --color-card: var(--wp--preset--color--card);
+  --color-border: var(--wp--preset--color--border);
+  --color-black: var(--wp--preset--color--black);
+  --color-white: var(--wp--preset--color--white);
+
+  /* Button colors */
+  --color-btn-text: var(--wp--preset--color--btn-text);
+  --color-btn-bg: var(--wp--preset--color--btn-bg);
+  --color-btn-text-hover: var(--wp--preset--color--btn-text-hover);
+  --color-btn-primary-text: var(--wp--preset--color--btn-primary-text);
+  --color-btn-primary-bg: var(--wp--preset--color--btn-primary-bg);
+  --color-btn-primary-text-hover: var(--wp--preset--color--btn-primary-text-hover);
+  --color-btn-primary-bg-hover: var(--wp--preset--color--btn-primary-bg-hover);
+
+  /* Content width constraints - Reference WordPress spacing presets */
+  --size-content-1: var(--wp--preset--spacing--content-1);
+  --size-content-2: var(--wp--preset--spacing--content-2);
+  --size-content-3: var(--wp--preset--spacing--content-3);
+
+  /* Code syntax color */
+  --color-code-text: oklch(75% 0.15 162.48);
+}

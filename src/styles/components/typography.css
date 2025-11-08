@@ -1,0 +1,133 @@
+/* Typography Components */
+
+.h1 {
+  font-size: var(--text-5xl);
+  font-weight: var(--font-weight-black);
+  letter-spacing: var(--tracking-tighter);
+  color: var(--color-black);
+}
+
+.h2 {
+  font-size: var(--text-xl);
+  font-weight: 300;
+  font-style: italic;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-black);
+  font-family: 'Instrument Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+@media (min-width: 768px) {
+  .h2 {
+    font-size: var(--text-2xl);
+  }
+}
+
+@media (min-width: 1024px) {
+  .h2 {
+    font-size: var(--text-3xl);
+  }
+}
+
+.h3 {
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-black);
+}
+
+.h4 {
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+}
+
+.h5 {
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-black);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-primary-600);
+}
+
+.body {
+  font-size: var(--text-base);
+  color: var(--color-primary-600);
+}
+
+.body-sm {
+  font-size: var(--text-sm);
+  color: var(--color-primary-500);
+}
+
+.label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-primary-500);
+}
+
+.meta {
+  font-size: var(--text-xs);
+  color: var(--color-primary-500);
+}
+
+.subtitle {
+  font-size: var(--text-5xl);
+  font-weight: 200;
+  font-style: italic;
+  letter-spacing: var(--tracking-wide);
+  color: var(--color-black);
+  font-family: 'Instrument Serif', Georgia, Cambria, 'Times New Roman', Times, serif;
+}
+
+.header-content {
+  font-size: var(--text-base);
+  color: var(--color-primary-600);
+}
+
+/* Highlight text (accent color for emphasis) */
+.highlight {
+  color: var(--color-accent);
+  font-weight: inherit;
+}
+
+/* Inline code styling - dark background with custom green text */
+code {
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace !important;
+  font-size: 0.875em !important;
+  padding: 0.2em 0.6em !important;
+  background: var(--tw-prose-pre-bg) !important;
+  border-radius: 0.375rem !important;
+  color: var(--color-code-text) !important;
+  font-weight: 500 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  line-height: 1.5 !important;
+}
+
+/* Code inside pre blocks should not have extra padding/background */
+pre code {
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  font-size: 0.875rem !important;
+  color: #e6edf3 !important;
+}
+
+/* Forcefully hide backticks added by typography plugins */
+code::before,
+code::after {
+  content: none !important;
+}
+
+/* Additional specificity to override @tailwindcss/typography */
+:where(code):not(:where([class~="not-prose"] *))::before,
+:where(code):not(:where([class~="not-prose"] *))::after {
+  content: none !important;
+}

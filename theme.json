@@ -1,0 +1,270 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 3,
+	"settings": {
+		"typography": {
+			"fontFamilies": [
+				{
+					"slug": "system-sans",
+					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif",
+					"name": "System Sans"
+				},
+				{
+					"slug": "system-serif",
+					"fontFamily": "Georgia, Cambria, 'Times New Roman', Times, serif",
+					"name": "System Serif"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "xs",
+					"size": "0.75rem",
+					"name": "Extra Small"
+				},
+				{
+					"slug": "sm",
+					"size": "0.875rem",
+					"name": "Small"
+				},
+				{
+					"slug": "base",
+					"size": "1rem",
+					"name": "Base"
+				},
+				{
+					"slug": "lg",
+					"size": "1.125rem",
+					"name": "Large"
+				},
+				{
+					"slug": "xl",
+					"size": "1.25rem",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "2xl",
+					"size": "1.5rem",
+					"name": "2X Large"
+				},
+				{
+					"slug": "3xl",
+					"size": "1.875rem",
+					"name": "3X Large"
+				},
+				{
+					"slug": "4xl",
+					"size": "2.25rem",
+					"name": "4X Large"
+				},
+				{
+					"slug": "5xl",
+					"size": "3rem",
+					"name": "5X Large"
+				},
+				{
+					"slug": "6xl",
+					"size": "3.75rem",
+					"name": "6X Large"
+				}
+			],
+			"fontWeights": true,
+			"lineHeights": true,
+			"letterSpacing": true
+		},
+		"color": {
+			"link": true,
+			"palette": [
+				{
+					"slug": "primary",
+					"color": "oklch(0.45 0.20 264)",
+					"name": "Primary"
+				},
+				{
+					"slug": "accent",
+					"color": "oklch(0.65 0.15 142)",
+					"name": "Accent"
+				},
+				{
+					"slug": "accent-content",
+					"color": "oklch(0.15 0.02 264)",
+					"name": "Accent Content"
+				},
+				{
+					"slug": "accent-hover",
+					"color": "oklch(0.55 0.15 142)",
+					"name": "Accent Hover"
+				},
+				{
+					"slug": "base-50",
+					"color": "oklch(0.98 0.005 65)",
+					"name": "Base 50"
+				},
+				{
+					"slug": "base-100",
+					"color": "oklch(0.96 0.008 65)",
+					"name": "Base 100"
+				},
+				{
+					"slug": "base-200",
+					"color": "oklch(0.94 0.01 65)",
+					"name": "Base 200"
+				},
+				{
+					"slug": "base-300",
+					"color": "oklch(0.90 0.015 65)",
+					"name": "Base 300"
+				},
+				{
+					"slug": "primary-50",
+					"color": "oklch(0.99 0 0)",
+					"name": "Primary 50"
+				},
+				{
+					"slug": "primary-75",
+					"color": "oklch(0.985 0 0)",
+					"name": "Primary 75"
+				},
+				{
+					"slug": "primary-100",
+					"color": "oklch(0.97 0 0)",
+					"name": "Primary 100"
+				},
+				{
+					"slug": "primary-200",
+					"color": "oklch(0.92 0 0)",
+					"name": "Primary 200"
+				},
+				{
+					"slug": "primary-300",
+					"color": "oklch(0.87 0 0)",
+					"name": "Primary 300"
+				},
+				{
+					"slug": "primary-400",
+					"color": "oklch(0.68 0 0)",
+					"name": "Primary 400"
+				},
+				{
+					"slug": "primary-500",
+					"color": "oklch(0.53 0 0)",
+					"name": "Primary 500"
+				},
+				{
+					"slug": "primary-600",
+					"color": "oklch(0.42 0 0)",
+					"name": "Primary 600"
+				},
+				{
+					"slug": "primary-700",
+					"color": "oklch(0.35 0 0)",
+					"name": "Primary 700"
+				},
+				{
+					"slug": "primary-800",
+					"color": "oklch(0.24 0 0)",
+					"name": "Primary 800"
+				},
+				{
+					"slug": "primary-900",
+					"color": "oklch(0.17 0 0)",
+					"name": "Primary 900"
+				},
+				{
+					"slug": "primary-950",
+					"color": "oklch(0.15 0.02 264.05)",
+					"name": "Primary 950"
+				},
+				{
+					"slug": "surface",
+					"color": "oklch(0.98 0.005 65)",
+					"name": "Surface"
+				},
+				{
+					"slug": "card",
+					"color": "oklch(1 0 0)",
+					"name": "Card"
+				},
+				{
+					"slug": "border",
+					"color": "oklch(0.92 0 0)",
+					"name": "Border"
+				},
+				{
+					"slug": "black",
+					"color": "oklch(0.15 0.02 264.05)",
+					"name": "Black"
+				},
+				{
+					"slug": "white",
+					"color": "oklch(1 0 0)",
+					"name": "White"
+				},
+				{
+					"slug": "btn-text",
+					"color": "oklch(0.53 0 0)",
+					"name": "Button Text"
+				},
+				{
+					"slug": "btn-bg",
+					"color": "oklch(0.99 0 0)",
+					"name": "Button Background"
+				},
+				{
+					"slug": "btn-text-hover",
+					"color": "oklch(0.15 0.02 264.05)",
+					"name": "Button Text Hover"
+				},
+				{
+					"slug": "btn-primary-text",
+					"color": "oklch(1 0 0)",
+					"name": "Button Primary Text"
+				},
+				{
+					"slug": "btn-primary-bg",
+					"color": "oklch(0.15 0.02 264.05)",
+					"name": "Button Primary Background"
+				},
+				{
+					"slug": "btn-primary-text-hover",
+					"color": "oklch(1 0 0)",
+					"name": "Button Primary Text Hover"
+				},
+				{
+					"slug": "btn-primary-bg-hover",
+					"color": "oklch(0.24 0 0)",
+					"name": "Button Primary Background Hover"
+				}
+			]
+		},
+		"spacing": {
+			"customSpacingSize": true,
+			"spacingSizes": [
+				{
+					"slug": "content-1",
+					"size": "20ch",
+					"name": "Content 1"
+				},
+				{
+					"slug": "content-2",
+					"size": "45ch",
+					"name": "Content 2"
+				},
+				{
+					"slug": "content-3",
+					"size": "60ch",
+					"name": "Content 3"
+				}
+			]
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "var(--wp--preset--color--surface)"
+		},
+		"typography": {
+			"fontFamily": "var(--wp--preset--font-family--system-sans)",
+			"fontSize": "var(--wp--preset--font-size--base)",
+			"lineHeight": "1.6"
+		}
+	}
+}

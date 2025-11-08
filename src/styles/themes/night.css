@@ -1,0 +1,55 @@
+/* Night Theme (Dark Mode) */
+
+.theme-night {
+  /* Backgrounds - invert to dark */
+  --color-surface: var(--color-primary-900);
+  --color-card: var(--color-primary-950);
+  --color-border: var(--color-primary-800);
+
+  /* Text - flip the scale for readability */
+  --color-primary-500: var(--color-primary-400);
+  --color-primary-600: var(--color-primary-300);
+
+  /* Shadows - darker for dark mode */
+  --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.5), 0 1px 2px -1px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+}
+
+/* Fine-tune specific components in dark mode */
+.theme-night .btn {
+  background-color: var(--color-primary-800);
+}
+
+.theme-night .btn:hover {
+  background-color: var(--color-primary-700);
+  color: var(--color-white);
+}
+
+.theme-night .badge {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+}
+
+.theme-night .h1,
+.theme-night .h2,
+.theme-night .h3,
+.theme-night .h4,
+.theme-night .h5 {
+  color: var(--color-white);
+}
+
+.theme-night .nav-link {
+  color: var(--color-white);
+}
+
+.theme-night .nav-link:hover {
+  color: var(--color-primary-400);
+}
+
+.theme-night .footer-link {
+  color: var(--color-primary-400);
+}
+
+.theme-night .footer-link:hover {
+  color: var(--color-white);
+}

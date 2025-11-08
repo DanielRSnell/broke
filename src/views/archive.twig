@@ -1,0 +1,22 @@
+{#
+/**
+ * Template Name: Archive
+ * Description: Template for displaying post archives (category, tag, date, author)
+ * Context: posts (array of Timber\Post objects), title (archive title)
+ */
+#}
+
+{% include 'partials/header.twig' %}
+
+<main class="site-main">
+	<div class="archive-container">
+		{% include 'partials/archive-header.twig' %}
+
+		<div class="archive-posts">
+			{# Archive posts loop #}
+
+		</div>
+	</div>
+</main>
+
+{% include 'partials/footer.twig' %}

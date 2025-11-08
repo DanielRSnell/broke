@@ -1,0 +1,67 @@
+{
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "jsdom": "^27.1.0",
+    "lucide": "^0.552.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.14",
+    "@tailwindcss/typography": "^0.5.19",
+    "prettier": "^3.6.2",
+    "tailwind-scrollbar-hide": "^4.0.0",
+    "tailwindcss": "^4.1.14",
+    "vite": "^7.1.10"
+  },
+  "scripts": {
+    "build:scss": "sass src/scss/main.scss:_production/style.css --style compressed",
+    "build:css": "tailwindcss --input src/styles/tailwind.css --output _production/styles.css --minify",
+    "clean:css": "rm -f _production/*.css",
+    "clean:js": "rm -f _production/*.js",
+    "clean:production": "rm -rf _production/*",
+    "clean:editor": "rm -rf _editor/*",
+    "clean:patterns": "rm -f patterns/*.php",
+    "clean:parts": "rm -f parts/*.html",
+    "clean:templates": "rm -f templates/*.html",
+    "clean:all": "npm run clean:production && npm run clean:editor && npm run clean:patterns && npm run clean:parts && npm run clean:templates",
+    "dev": "vite",
+    "build": "vite build",
+    "build:js": "vite build",
+    "format": "prettier --write \"**/*.{js,css,html}\"",
+    "format:check": "prettier --check \"**/*.{js,css,html}\"",
+    "parts:pull": "THEME=$(basename $(pwd)) && cd ../../.. && wp blocks:html parts --all && cd wp-content/themes/$THEME",
+    "parts:push": "THEME=$(basename $(pwd)) && cd ../../.. && wp html:blocks src/parts --all && cd wp-content/themes/$THEME",
+    "pattern:extract": "wp pattern extract $FILE",
+    "patterns:push": "THEME=$(basename $(pwd)) && cd ../../.. && wp html:blocks src/patterns --all && wp pattern push --all && rm -f wp-content/themes/$THEME/patterns/*.html",
+    "content:pull": "cd ../../.. && wp content pull --all",
+    "content:push": "cd ../../.. && wp content push --all",
+    "page:pull": "THEME=$(basename $(pwd)) && cd ../../.. && wp page pull --all && cd wp-content/themes/$THEME && npx prettier --write \"src/content/pages/**/*.html\"",
+    "page:push": "cd ../../.. && wp page push --all",
+    "template:pull": "THEME=$(basename $(pwd)) && for file in templates/*.html; do [ -f \"$file\" ] && cd ../../.. && wp template pull $(basename \"$file\" .html) && cd wp-content/themes/$THEME; done",
+    "template:push": "THEME=$(basename $(pwd)) && for file in src/templates/*.html; do [ -f \"$file\" ] && cd ../../.. && wp template push $(basename \"$file\" .html) && cd wp-content/themes/$THEME; done",
+    "template:download": "THEME=$(basename $(pwd)) && for file in templates/*.html; do [ -f \"$file\" ] && cd ../../.. && wp template pull $(basename \"$file\" .html) && cd wp-content/themes/$THEME && echo \"✓ Pulled $(basename \"$file\")\"; done",
+    "parts:download": "THEME=$(basename $(pwd)) && cd ../../.. && for name in $(wp post list --post_type=wp_template_part --field=post_name); do wp post get $(wp post list --post_type=wp_template_part --name=$name --field=ID) --field=post_content > wp-content/themes/$THEME/src/parts/$name.html && echo \"✓ Pulled $name.html\"; done && cd wp-content/themes/$THEME"
+  },
+  "name": "broke-theme",
+  "version": "1.0.0",
+  "description": "A modern WordPress block theme boilerplate built with Tailwind CSS v4, Universal Block, and Timber. Features bidirectional content sync, html2pattern CLI, clean MVC architecture, and zero JavaScript dependencies by default.",
+  "main": "index.js",
+  "keywords": [
+    "wordpress",
+    "block-theme",
+    "tailwindcss",
+    "timber",
+    "gutenberg",
+    "fse",
+    "full-site-editing",
+    "boilerplate",
+    "starter-theme"
+  ],
+  "author": "Daniel Snell <daniel@broke.dev>",
+  "license": "GPL-2.0-or-later",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "packageManager": "pnpm@8.0.0"
+}

@@ -1,0 +1,20 @@
+{#
+/**
+ * Partial: Archive Header
+ * Description: Archive page header with title and description
+ * Context: archive.title, archive.description (from context filter in src/context/archive.php)
+ * Usage: {% include 'partials/archive-header.twig' %}
+ */
+#}
+
+<header class="archive-header">
+	{% if archive.title %}
+		<h1 class="archive-title">{{ archive.title }}</h1>
+	{% endif %}
+
+	{% if archive.description %}
+		<div class="archive-description">
+			{{ archive.description }}
+		</div>
+	{% endif %}
+</header>

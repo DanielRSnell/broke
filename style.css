@@ -1,0 +1,25 @@
+/*
+Theme Name: Broke
+Theme URI: https://broke.dev
+Author: Daniel Snell
+Author URI: https://broke.dev
+Description: A modern WordPress block theme boilerplate built with Tailwind CSS v4, Universal Block, and Timber. Features bidirectional content sync, html2pattern CLI, clean MVC architecture, and zero JavaScript dependencies by default.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 8.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: broke-fse
+Tags: block-theme, full-site-editing, tailwindcss, timber, custom-blocks, boilerplate, starter-theme
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+*/
+
+/**
+ * Note: This file is required by WordPress but styles are loaded from:
+ * - assets/_production/styles.css (Tailwind CSS)
+ * - See src/styles/ for source files
+ * - Build with: npm run build:css
+ */

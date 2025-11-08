@@ -1,0 +1,26 @@
+/*
+ * Core theme styles
+ * Minimal global styles - Tailwind Preflight handles most resets
+ */
+
+body {
+  background: var(--color-surface);
+}
+
+/* Only reset links that don't have explicit styling */
+a {
+  text-decoration: none !important;
+}
+
+/* Only reset lists that aren't in prose/content areas */
+ul:where(:not(.prose *, .wp-block-* *)),
+ol:where(:not(.prose *, .wp-block-* *)) {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+
+pre {
+  background-color: oklch(27.4% .006 286.033)!important;
+}

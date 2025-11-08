@@ -1,0 +1,35 @@
+# Build outputs
+_production/
+_editor/
+
+# Dependencies
+node_modules/
+vendor/
+
+# NPM lock files (use PNPM)
+package-lock.json
+node_modules/.package-lock.json
+
+# Temporary files
+src/tmp/
+.DS_Store
+*.log
+
+# IDE settings
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.claude/
+
+# WordPress generated files (can be regenerated)
+patterns/*.php
+parts/*.html
+templates/*.html
+
+# Composer
+composer.phar
+
+# Environment files (if any)
+.env
+.env.local

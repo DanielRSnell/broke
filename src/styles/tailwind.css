@@ -1,0 +1,30 @@
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@plugin "tailwind-scrollbar-hide";
+@plugin "@tailwindcss/typography";
+
+@view-transition {
+  navigation: auto;
+}
+
+@source "../parts/**/*.html";
+@source "../patterns/**/*.html";
+@source "../content/**/*.html";
+@source "../templates/**/*.html";
+
+/* Theme layer */
+@import './core/wordpress.css' layer(theme);
+@import './core/colors.css' layer(theme);
+@import './core/editor.css' layer(theme);
+
+/* Component layer */
+@layer components {
+  @import './components/typography.css';
+  @import './components/buttons.css';
+  @import './components/cards.css';
+  @import './components/layout.css';
+  @import './components/animations.css';
+}
