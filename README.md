@@ -1,6 +1,6 @@
-# Broke FSE
+# Broke Theme
 
-> A modern WordPress block theme boilerplate built with Tailwind CSS v4, Universal Block, and Timber.
+> A modern WordPress theme built with Timber/Twig, Tailwind CSS v4, and optional block patterns.
 
 ![Broke FSE Theme](screenshot.png)
 
@@ -14,13 +14,14 @@
 
 ## Features
 
-- ✨ **Zero JavaScript Dependencies by Default** - Pure CSS animations, optional JavaScript
+- 🌲 **Timber/Twig Templates** - Clean MVC architecture with traditional WordPress template hierarchy
 - 🎨 **Tailwind CSS v4** - Utility-first CSS with automatic tree-shaking
-- 🏗️ **Universal Block** - Custom Gutenberg block with Twig templating
-- 🌲 **Timber/Twig** - Clean MVC architecture for PHP templates
+- 📐 **Traditional Theme Structure** - Standard WordPress template files (index.php, single.php, etc.)
 - 🔄 **Bidirectional Content Sync** - Edit content as markdown or in WordPress
-- ⚙️ **html2pattern CLI** - Convert HTML templates to WordPress patterns
+- 🎯 **Context Filters** - Clean data layer for dynamic content
+- 🧩 **Reusable Partials** - Component-based Twig templates
 - 📦 **ACF JSON Support** - Version control for custom fields
+- ⚙️ **Optional Block Patterns** - Keep block editor functionality alongside traditional templates
 - 🎯 **PNPM Recommended** - Fast, efficient package management
 - 📝 **SCSS Optional** - Use Bootstrap-style SCSS alongside or instead of Tailwind
 
@@ -201,7 +202,7 @@ pnpm run build:js
 ### 5. Activate Theme
 
 1. Go to WordPress admin → **Appearance → Themes**
-2. Find **Broke FSE**
+2. Find **Broke**
 3. Click **Activate**
 
 ---
@@ -223,13 +224,14 @@ pnpm run watch:css & pnpm run watch:js
 
 ### Editing Workflow
 
-1. **Edit HTML templates** in `src/pages/` or `src/patterns/`
-2. **Rebuild CSS/JS:**
+1. **Edit Twig templates** in `src/views/`
+2. **Edit context filters** in `src/context/` (for data)
+3. **Rebuild CSS/JS:**
    ```bash
    pnpm run build:css
    pnpm run build:js
    ```
-3. **Refresh WordPress** to see changes
+4. **Refresh browser** to see changes
 
 ---
 
@@ -310,20 +312,20 @@ pnpm run watch:css & pnpm run watch:js
 
 ### Tech Stack
 
-- **WordPress 6.0+** - Full Site Editing (FSE)
+- **WordPress 6.0+** - Traditional theme with template hierarchy
+- **Timber/Twig** - MVC templating engine for clean separation of concerns
 - **Tailwind CSS v4** - Utility-first CSS framework
-- **Universal Block** - Custom Gutenberg block with Twig support
-- **Timber/Twig** - MVC templating engine
 - **Vite** - JavaScript bundler
 - **PNPM** - Package manager
 - **WP-CLI** - Command-line WordPress management
+- **ACF PRO** - Advanced Custom Fields (optional)
 
 ### Design Patterns
 
 **MVC Architecture:**
 - **Model:** WordPress data (posts, terms, options)
-- **View:** Twig templates (`src/pages/`, `src/patterns/`)
-- **Controller:** Context filters (`src/context/`)
+- **View:** Twig templates (`src/views/*.twig`)
+- **Controller:** PHP templates + Context filters (`src/context/`)
 
 **Example:**
 ```php
@@ -337,12 +339,19 @@ add_filter('timber/context', function($context) {
 ```
 
 ```twig
-<!-- src/pages/home.html (View) -->
-<div loopsource="recent_posts" loopvariable="post">
+{# src/views/home.twig (View) #}
+{% for post in recent_posts %}
     <h3>{{ post.title }}</h3>
     <p>{{ post.excerpt }}</p>
-</div>
+{% endfor %}
 ```
+
+**Template Hierarchy:**
+- WordPress routes request (e.g., single post)
+- PHP template loads (`single.php`)
+- PHP prepares context with Timber
+- Twig renders view (`src/views/single.twig`)
+- Clean HTML output
 
 ---
 
@@ -358,13 +367,11 @@ broke-theme/
 │   ├── CLI/              # WP-CLI commands
 │   │   ├── content-cli/  # Content sync
 │   │   ├── page-cli/     # Page sync
-│   │   ├── html2pattern-cli/  # Pattern converter
 │   │   └── ...
-│   ├── context/          # Legacy context filters
+│   ├── context/          # Additional context filters
 │   ├── enqueue.php       # Asset loading
 │   └── helpers.php       # Helper functions
-├── patterns/             # Generated WordPress patterns (PHP)
-├── parts/                # FSE template parts
+├── patterns/             # Optional WordPress patterns (PHP)
 ├── public/               # Static assets (images, icons, fonts)
 │   └── README.md
 ├── src/                  # Source files
@@ -373,13 +380,11 @@ broke-theme/
 │   │   ├── pages/
 │   │   ├── resources/
 │   │   └── projects/
-│   ├── context/          # Timber context filters (MVC data)
+│   ├── context/          # Timber context filters (MVC data layer)
+│   │   ├── archive.php
+│   │   ├── related.php
+│   │   └── params.php
 │   ├── docs/             # Documentation
-│   │   └── block-markup-guide.md
-│   ├── extensions/       # Theme extensions (PHP)
-│   ├── pages/            # HTML page templates
-│   ├── parts/            # Template part sources
-│   ├── patterns/         # Pattern section sources
 │   ├── scripts/          # JavaScript source
 │   │   ├── components/
 │   │   │   ├── form-handler.js
@@ -390,16 +395,30 @@ broke-theme/
 │   │   ├── components/   # Component styles
 │   │   ├── core/         # Core styles
 │   │   ├── themes/       # Theme variants (dark mode)
-│   │   ├── vendor/       # Third-party overrides
 │   │   └── tailwind.css  # Main entry point
-│   └── templates/        # FSE template sources
-├── templates/            # FSE templates
+│   └── views/            # Twig templates ⭐
+│       ├── index.twig
+│       ├── single.twig
+│       ├── page.twig
+│       ├── archive.twig
+│       ├── partials/     # Reusable components
+│       │   ├── header.twig
+│       │   ├── footer.twig
+│       │   └── post-card.twig
+│       └── woocommerce/  # WooCommerce templates
+│           ├── single-product.twig
+│           └── archive-product.twig
+├── index.php             # PHP template files ⭐
+├── single.php
+├── page.php
+├── archive.php
+├── 404.php
 ├── composer.json         # PHP dependencies
 ├── functions.php         # Theme initialization
 ├── package.json          # Node dependencies & scripts
 ├── pnpm-lock.yaml        # PNPM lock file
 ├── style.css             # WordPress theme header
-├── theme.json            # FSE configuration
+├── theme.json            # Theme configuration
 └── vite.config.js        # Vite configuration
 ```
 
@@ -614,63 +633,43 @@ pnpm install --prod
 
 ## Advanced Features
 
-### Universal Block Markup Language
+### Timber/Twig Templating
 
-This theme uses a custom **Universal Block Markup Language** that combines HTML with Twig templating, eliminating the need for traditional PHP WordPress templates.
+This theme uses **Timber** to bring Twig templating to WordPress, providing a clean MVC architecture.
 
-**Key Features:**
-- ✅ Write clean HTML with dynamic content
-- ✅ Custom WordPress elements: `<Part>`, `<Pattern>`, `<Content>`
-- ✅ Twig control attributes for loops and conditionals
-- ✅ MVC architecture with context filters
-- ✅ No PHP required in templates
+**Key Benefits:**
+- ✅ Clean separation of PHP logic and HTML presentation
+- ✅ Reusable template partials
+- ✅ Context filters for data management
+- ✅ Readable, maintainable code
+- ✅ IDE support with autocomplete
 
-#### Custom WordPress Elements
+#### Template Structure
 
-Include template parts, patterns, and post content using custom HTML elements:
-
-```html
-<!-- Include header/footer -->
-<Part slug="header"></Part>
-
-<main>
-  <!-- Include reusable patterns -->
-  <Pattern slug="hero-section"></Pattern>
-
-  <!-- Display post content -->
-  <Content class="prose"></Content>
-</main>
-
-<Part slug="footer"></Part>
+**PHP Template (Controller):**
+```php
+// single.php
+<?php
+$context = Timber::context();
+$context['post'] = Timber::get_post();
+Timber::render('single.twig', $context);
 ```
 
-**⚠️ Important:** Always use closing tags (`</Part>`), never self-closing (`<Part />`).
+**Twig Template (View):**
+```twig
+{# src/views/single.twig #}
+{% include 'partials/header.twig' %}
 
-#### Control Attributes
+<article class="single-post">
+    <h1>{{ post.title }}</h1>
+    <time>{{ post.date|date('F j, Y') }}</time>
+    <div>{{ post.content }}</div>
+</article>
 
-Add dynamic behavior with HTML attributes:
-
-```html
-<!-- Loop through posts -->
-<div loopsource="posts" loopvariable="post">
-  <h3>{{ post.title }}</h3>
-  <p>{{ post.excerpt }}</p>
-</div>
-
-<!-- Conditional rendering -->
-<div conditionalvisibility="true" conditionalexpression="user.ID > 0">
-  <p>Welcome, {{ user.display_name }}!</p>
-</div>
-
-<!-- Transform ACF image IDs to Image objects -->
-<div loopsource="post.meta('gallery')" loopvariable="image_id">
-  <div setvariable="image" setexpression="timber.get_image(image_id)">
-    <img src="{{ image.src('large') }}" alt="{{ image.alt }}">
-  </div>
-</div>
+{% include 'partials/footer.twig' %}
 ```
 
-#### MVC Pattern with Context Filters (Recommended)
+#### Context Filters (MVC Data Layer)
 
 **✅ The proper way to fetch data:**
 
@@ -684,59 +683,56 @@ add_filter('timber/context', function($context) {
 });
 ```
 
-```html
-<!-- Template - Clean and simple! -->
-<div loopsource="recent_posts" loopvariable="post">
-  <h3>{{ post.title }}</h3>
-</div>
-```
-
-**⚠️ Data Fetching in Templates:**
-
-While context filters are recommended for most cases, there are valid scenarios for template-based data fetching:
-
-```html
-<!-- ✅ VALID - Self-contained reusable component with built-in data fetching -->
-<div setvariable="recent_posts" setexpression="timber.get_posts({'posts_per_page': 3})">
-  <h2>Latest Updates</h2>
-  <div loopsource="recent_posts" loopvariable="post">
+```twig
+{# Template - Clean and simple! #}
+{% for post in recent_posts %}
     <h3>{{ post.title }}</h3>
-  </div>
-</div>
-
-<!-- ❌ AVOID - Complex queries or page-specific data (use context filters instead) -->
-{% set posts = timber.get_posts({'posts_per_page': 5, 'category__in': [1,2,3]}) %}
+    <p>{{ post.excerpt }}</p>
+{% endfor %}
 ```
 
-**When to fetch in templates:**
-- Self-contained, reusable components/patterns
-- Simple, generic queries (e.g., "latest 3 posts")
-- Components that need to work independently anywhere
+#### Twig Syntax Examples
 
-**When to use context filters:**
-- Page-specific data requirements
-- Complex queries with multiple conditions
-- Data needed across multiple templates
-- Performance-critical queries
-
-#### Inline Twig Expressions
-
-Use Twig syntax for variables, filters, and logic:
-
-```html
-<h1>{{ post.title }}</h1>
-<time>{{ post.date|date('F j, Y') }}</time>
-
-<!-- Access custom fields -->
-<p>{{ post.meta('subtitle') }}</p>
-
-<!-- Loop through categories -->
-<div loopsource="post.categories" loopvariable="cat">
-  <a href="{{ cat.link }}">{{ cat.name }}</a>
-</div>
+**Variables and Filters:**
+```twig
+{{ post.title }}
+{{ post.date|date('F j, Y') }}
+{{ post.excerpt|length }}
+{{ post.content|striptags|truncate(200) }}
 ```
 
-**Full Documentation:** [src/docs/block-themes/blocks.md](src/docs/block-themes/blocks.md)
+**Conditionals:**
+```twig
+{% if post.thumbnail %}
+    <img src="{{ post.thumbnail.src }}" alt="{{ post.title }}">
+{% endif %}
+
+{% if user.ID > 0 %}
+    <p>Welcome, {{ user.display_name }}!</p>
+{% endif %}
+```
+
+**Loops:**
+```twig
+{% for post in posts %}
+    <article>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.excerpt }}</p>
+    </article>
+{% endfor %}
+```
+
+**Custom Fields (ACF):**
+```twig
+{{ post.meta('subtitle') }}
+{{ post.meta('featured') }}
+
+{% for item in post.meta('table_of_contents') %}
+    <li><a href="#{{ item.anchor }}">{{ item.section }}</a></li>
+{% endfor %}
+```
+
+**Full Documentation:** [src/views/README.md](src/views/README.md)
 
 ### SCSS Support
 
@@ -797,14 +793,10 @@ Source files in `src/scss/`. See [src/scss/README.md](src/scss/README.md).
 - **[README.md](README.md)** - This file (getting started, CLI reference)
 
 ### Source Directory Guides
+- **[src/views/README.md](src/views/README.md)** - Twig templates (traditional theme structure) ⭐
+- **[src/context/README.md](src/context/README.md)** - Timber context filters (MVC data layer) ⭐
 - **[src/content/README.md](src/content/README.md)** - Content collections (markdown & HTML sync)
-- **[src/context/README.md](src/context/README.md)** - Timber context filters (MVC data layer)
-- **[src/extensions/README.md](src/extensions/README.md)** - Theme extensions (custom post types, etc.)
-- **[src/pages/README.md](src/pages/README.md)** - HTML page templates
-- **[src/parts/README.md](src/parts/README.md)** - FSE template parts
-- **[src/patterns/README.md](src/patterns/README.md)** - Pattern section sources
 - **[src/scripts/README.md](src/scripts/README.md)** - JavaScript source files
-- **[src/templates/README.md](src/templates/README.md)** - FSE template sources
 
 ### Styles Documentation
 - **[src/styles/README.md](src/styles/README.md)** - CSS architecture overview
@@ -817,10 +809,6 @@ Source files in `src/scss/`. See [src/scss/README.md](src/scss/README.md).
 ### Other Directories
 - **[acf-json/README.md](acf-json/README.md)** - ACF custom fields guide
 - **[public/README.md](public/README.md)** - Static assets guide
-
-### Block Markup & CLI
-- **[src/docs/block-markup-guide.md](src/docs/block-markup-guide.md)** - Universal Block syntax
-- **[includes/CLI/html2pattern-cli/README.md](includes/CLI/html2pattern-cli/README.md)** - Pattern converter documentation
 
 ---
 
