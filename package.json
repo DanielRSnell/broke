@@ -13,7 +13,6 @@
     "vite": "^7.1.10"
   },
   "scripts": {
-    "build:scss": "sass src/scss/main.scss:_production/style.css --style compressed",
     "build:css": "tailwindcss --input src/styles/tailwind.css --output _production/styles.css --minify",
     "clean:css": "rm -f _production/*.css",
     "clean:js": "rm -f _production/*.js",

@@ -1,76 +1,117 @@
-/* Button Components */
+/**
+ * Button Components
+ * Gradient CTA buttons extracted from inline styles
+ */
 
-.btn {
+/* Primary Gradient Button (CTA) */
+.btn-gradient {
+  /* Layout */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: calc(var(--spacing) * 2);
-  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
-  height: auto;
-  font-size: var(--text-xs);
-  font-weight: var(--font-weight-medium);
-  text-align: center;
-  color: var(--color-btn-text);
-  background-color: var(--color-btn-bg);
-  border-radius: 9999px;
-  position: relative;
-  overflow: hidden;
-  transition:
-    color 500ms ease-in-out,
-    background-color 500ms ease-in-out;
-  outline: 2px solid transparent;
-  outline-offset: 2px;
+
+  /* Sizing */
+  height: 50px;
+  min-width: auto;
+  max-width: 100%;
+  padding: 3px;
+
+  /* Typography */
+  font-size: 14px;
+  line-height: 1em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Background & Border */
+  background-image: linear-gradient(144deg, rgb(175, 64, 255), rgb(91, 66, 243) 50%, rgb(0, 221, 235));
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0px 15px 30px -5px;
+
+  /* Behavior */
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+
+  /* Transform */
+  transform: scale(1);
+  transition: transform 0.2s ease;
 }
 
-.btn:focus-visible {
-  outline-color: var(--color-btn-text);
+.btn-gradient:active {
+  transform: scale(0.9);
 }
 
-.btn:hover {
-  color: var(--color-btn-text-hover);
+/* Button Inner Span */
+.btn-gradient span {
+  background: rgb(5, 6, 45);
+  padding: 16px 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: background 0.2s ease;
 }
 
-/* Shine effect */
-.btn::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 2rem;
-  background: rgba(255, 255, 255, 0.2);
-  transform: skewX(-12deg) translateX(-200%);
-  transition: transform 0ms;
+.btn-gradient:hover span {
+  background: none;
 }
 
-.btn:hover::after {
-  transform: skewX(-12deg) translateX(500%);
-  transition: transform 600ms ease-out;
+/* Secondary Button Styles - Exact match to inline styles */
+.btn-secondary {
+  /* Layout */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Sizing */
+  height: 50px;
+  min-width: auto;
+  max-width: 100%;
+  padding: 3px;
+
+  /* Typography */
+  font-size: 14px;
+  line-height: 1em;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+
+  /* Background & Border */
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  box-shadow: rgba(255, 255, 255, 0.05) 0px 1px 0px inset;
+
+  /* Behavior */
+  box-sizing: border-box;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+
+  /* Transform */
+  transform: scale(1);
+  transition: all 0.2s ease;
 }
 
-/* Button sizes */
-.btn-sm {
-  padding: calc(var(--spacing) * 2) calc(var(--spacing) * 4);
-  font-size: var(--text-xs);
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.btn-md {
-  padding: calc(var(--spacing) * 3) calc(var(--spacing) * 6);
-  font-size: var(--text-sm);
+.btn-secondary:active {
+  transform: scale(0.95);
 }
 
-.btn-lg {
-  padding: calc(var(--spacing) * 4) calc(var(--spacing) * 8);
-  font-size: var(--text-base);
-}
-
-/* Primary action button */
-.btn-primary {
-  color: var(--color-btn-primary-text);
-  background-color: var(--color-btn-primary-bg);
-}
-
-.btn-primary:hover {
-  color: var(--color-btn-primary-text-hover);
-  background-color: var(--color-btn-primary-bg-hover);
+/* Secondary button inner span */
+.btn-secondary span {
+  padding: 16px 24px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }

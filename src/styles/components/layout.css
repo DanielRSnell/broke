@@ -1,44 +1,65 @@
-/* Layout Components */
+/* Layout Component Styles */
 
-.content {
-  max-width: var(--container-3xl);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: calc(var(--spacing) * 8);
-  padding-right: calc(var(--spacing) * 8);
+/* Section start spacing */
+.section-start {
+  margin-top: 6rem; /* Same as mt-24 */
 }
 
-.content-wide {
-  max-width: var(--container-7xl);
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: calc(var(--spacing) * 8);
-  padding-right: calc(var(--spacing) * 8);
+/* Background lines container */
+.lines-container {
+  width: 90vw;
 }
 
-.content-full {
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: calc(var(--spacing) * 8);
-  padding-right: calc(var(--spacing) * 8);
+/* Individual line positioning */
+.line-left {
+  margin-left: -22.5vw;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.section {
-  padding-top: calc(var(--spacing) * 12);
-  padding-bottom: calc(var(--spacing) * 12);
+.line-center {
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.section-first {
-  padding-top: calc(var(--spacing) * 32);
-  padding-bottom: calc(var(--spacing) * 12);
+.line-right {
+  margin-left: 22.5vw;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-.section-hero {
-  padding-top: calc(var(--spacing) * 24);
-  padding-bottom: calc(var(--spacing) * 24);
+/* Hero section height */
+.hero-section {
+  height: 600px;
 }
 
-.section-compact {
-  padding-top: calc(var(--spacing) * 6);
-  padding-bottom: calc(var(--spacing) * 6);
+/* US Project data element - absolute full overlay */
+.us-project-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Hero background text positioning */
+.hero-bg-text-transform {
+  left: 0;
+  transform: translateX(0) rotate(12deg);
+}
+
+/* Hero background text container */
+.hero-bg-text-container {
+  letter-spacing: -0.02em;
+}
+
+/* Hero background text typography */
+.hero-bg-text {
+  font-weight: 600;
+  font-size: min(20vw, 280px);
+  line-height: 0.8;
+  color: rgba(125, 211, 252, 0.5);
+}
+
+/* Drop shadow for images/videos */
+.drop-shadow-intense {
+  filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.6));
 }

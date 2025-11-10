@@ -1,0 +1,59 @@
+<!-- Featured Projects Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 w-full max-w-7xl mx-auto mt-12">
+
+  {% for project in posts %}
+  <!-- Project Card -->
+  <article class="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur group hover:border-white/20 transition-all duration-300 hover-lift">
+      <div class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+        <div class="absolute left-0 bottom-0 w-[60%] h-[80%] rounded-[40%] bg-gradient-to-tr from-white/5 to-transparent blur-3xl"></div>
+      </div>
+
+    <!-- Featured Image (Conditional) -->
+    {% if project.thumbnail %}
+      <div class="aspect-[4/3] relative overflow-hidden">
+        <img src="{{ project.thumbnail.src('large') }}" alt="{{ project.thumbnail.alt ?: project.title }}" style="view-transition-name: project-image-{{ project.slug }};" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/20 to-black/80"></div>
+      </div>
+    {% endif %}
+
+    <!-- Project Content -->
+    <div class="p-6 relative z-20 pointer-events-none">
+      <div class="flex items-center justify-between mb-3">
+        <h3 style="view-transition-name: project-title-{{ project.slug }};" class="text-xl font-medium text-white tracking-tight">
+          {{ project.title }}
+        </h3>
+        {% if project.date %}
+        <span class="text-sm text-neutral-400">
+          {{ project.date|date('Y') }}
+        </span>
+        {% endif %}
+      </div>
+
+      <!-- Excerpt -->
+      {% if project.excerpt %}
+      <p style="view-transition-name: project-excerpt-{{ project.slug }};" class="text-neutral-400 leading-relaxed mb-4">
+        {{ project.excerpt }}
+      </p>
+      {% endif %}
+
+      <!-- Technologies/Skills Tags (Conditional) -->
+      {% if project.meta('skills_technologies') %}
+      <div class="flex flex-wrap gap-2">
+        {% for skill in project.meta('skills_technologies')|split(', ') %}
+          <span class="inline-flex items-center text-xs text-neutral-200 bg-white/5 border-white/10 border rounded-full py-1.5 px-3">
+            {{ skill }}
+          </span>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+
+    <!-- Absolute Link Spanning Entire Card -->
+    <a href="{{ project.link }}" class="absolute top-0 w-full h-full z-30 cursor-pointer" aria-label="View {{ project.title }}">
+      <span class="sr-only">View {{ project.title }}</span>
+    </a>
+
+  </article>
+  {% endfor %}
+
+</div>

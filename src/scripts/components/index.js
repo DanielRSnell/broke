@@ -1,28 +1,24 @@
 /**
- * Component Initializer
- *
- * This file imports and initializes all JavaScript components.
- * Add your component imports and initialization calls here.
- *
- * Pattern:
- * 1. Import component initialization functions
- * 2. Call them in the initComponents() function
- * 3. Export initComponents to be called from main.js
+ * Component Initializers
+ * Import and initialize all interactive components
  */
 
-import { initFormHandler } from './form-handler';
+import { initializeButtonInteractions } from './button-interactions.js';
+import { initializeContactForm } from './contact-form.js';
 
-/**
- * Initialize all components
- * Called from main.js on DOMContentLoaded
- */
 export function initComponents() {
-  // Initialize form handler (example pattern)
-  initFormHandler();
+  // Initialize button hover and press effects
+  initializeButtonInteractions();
 
-  // Add more component initializations here
-  // Example:
-  // initMobileMenu();
-  // initCarousels();
-  // initModals();
+  // Initialize contact form
+  initializeContactForm();
+
+  console.log('✓ All components initialized');
+}
+
+// Auto-initialize when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initComponents);
+} else {
+  initComponents();
 }

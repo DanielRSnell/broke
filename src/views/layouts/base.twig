@@ -1,0 +1,33 @@
+{#
+/**
+ * Layout: Base
+ * Description: Base layout template with common structure and blocks
+ * Usage: {% extends "layouts/base.twig" %}
+ */
+#}
+<!DOCTYPE html>
+<html {{ site.language_attributes }}>
+<head>
+    <meta charset="{{ site.charset }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    {% block head %}
+        {# Additional head content can be added by extending templates #}
+    {% endblock %}
+
+    {{ function('wp_head') }}
+</head>
+<body class="{{ body_class }}" data-barba="wrapper">
+
+    {% include '/partials/header.twig' %}
+
+    {% block content %}
+        {# Main content goes here - must be overridden by extending templates #}
+    {% endblock %}
+
+    {% include '/partials/footer.twig' %}
+
+    {{ function('wp_footer') }}
+</body>
+</html>

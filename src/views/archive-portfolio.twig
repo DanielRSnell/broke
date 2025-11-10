@@ -1,0 +1,15 @@
+{#
+/**
+ * Template Name: Portfolio Archive
+ * Description: Archive template for portfolio custom post type
+ * Context: posts (array of portfolio items), title (archive title)
+ */
+#}
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+ {% include 'partials/page-header-centered.twig' %} 
+ {% include 'partials/portfolio-grid-projects.twig' %}
+ {% include 'partials/cta-centered-dual.twig' %}
+
+{% endblock %}

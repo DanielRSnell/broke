@@ -5,14 +5,10 @@
  * Context: posts, post (when in loop)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
-	<div class="container">
-		{# Main content area #}
-
-	</div>
+{% block content %}
+<main class="flex-grow">
+	{{ content | raw }}
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

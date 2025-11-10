@@ -5,15 +5,20 @@
  * Context: posts (search results), search_query (search term)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
+{% block content %}
+<main class="flex-grow">
 	<div class="search-results">
-		<h1>Search Results</h1>
-		{# Search results content #}
+		<h1>Search Results for "{{ search_query }}"</h1>
 
+		{% if posts %}
+			{% for post in posts %}
+				{% include 'partials/post-card.twig' with { post: post } %}
+			{% endfor %}
+		{% else %}
+			<p>No results found for your search.</p>
+		{% endif %}
 	</div>
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

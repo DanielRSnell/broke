@@ -1,18 +1,14 @@
 {#
 /**
  * Template Name: Single Post
- * Description: Template for displaying single blog posts
+ * Description: Single post template
  * Context: post (Timber\Post object)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
-	<article class="single-post">
-		{# Single post content #}
-
-	</article>
+{% block content %}
+<main class="flex-grow">
+	{{ content | raw }}
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

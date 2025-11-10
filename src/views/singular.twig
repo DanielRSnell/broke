@@ -5,14 +5,10 @@
  * Context: post (Timber\Post object)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
-	<article class="singular-content">
-		{# Singular content #}
-
-	</article>
+{% block content %}
+<main class="flex-grow">
+	{{ content | raw }}
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

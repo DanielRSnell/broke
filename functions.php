@@ -9,6 +9,7 @@ Timber\Timber::init();
 // Configure Timber template locations
 require_once get_template_directory() . '/includes/locations.php';
 
+
 /* Woocommerce Theme Suppport*/
 function theme_add_woocommerce_support()
 {
@@ -119,12 +120,34 @@ if (defined('WP_CLI') && WP_CLI) {
     require_once get_template_directory() . '/includes/cli/template-cli/register.php';
 }
 
-// Enable classic menus in FSE
+// Enable classic menus and theme support
 function blank_theme_enable_classic_menus() {
     add_theme_support('menus');
+    add_theme_support('post-thumbnails');
     register_nav_menus(array(
         'primary' => __('Primary Menu', 'blank-theme'),
         'footer' => __('Footer Menu', 'blank-theme')
     ));
 }
-add_action('after_setup_theme', 'blank_theme_enable_classic_menus'); 
+add_action('after_setup_theme', 'blank_theme_enable_classic_menus');
+
+// Populate prototype template choices dynamically
+add_filter('acf/load_field/key=field_portfolio_link_prototype', function($field) {
+    $field['choices'] = [];
+
+    $prototypes_dir = get_template_directory() . '/src/routes/prototypes';
+
+    if (is_dir($prototypes_dir)) {
+        $dirs = array_diff(scandir($prototypes_dir), ['.', '..']);
+
+        foreach ($dirs as $dir) {
+            $path = $prototypes_dir . '/' . $dir;
+            if (is_dir($path)) {
+                $label = ucwords(str_replace('-', ' ', $dir));
+                $field['choices'][$dir] = $label;
+            }
+        }
+    }
+
+    return $field;
+}); 

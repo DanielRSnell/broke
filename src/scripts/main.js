@@ -1,14 +1,6 @@
-/**
- * Main JavaScript Entry Point
- *
- * This file is the entry point for all JavaScript in the theme.
- * Import and initialize your components here.
- */
+// Main JavaScript entry point
+// Portfolio Studio Theme
 
-import { initComponents } from './components/index';
+import './components/index.js';
 
-// Initialize all components on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', () => {
-  initComponents();
-  console.log('Theme components initialized successfully!');
-});
+console.log('✓ Portfolio theme JS loaded!');

@@ -1,0 +1,209 @@
+{#
+/**
+ * Template Name: Single Portfolio
+ * Description: Single portfolio item template
+ * Context: post (Timber\Post object)
+ */
+#}
+{% extends "layouts/base.twig" %}
+
+{% block content %}
+<main class="flex-grow">
+    <!-- Hero Section with Featured Image -->
+    <section class="relative z-10 sm:p-8 animate-scaleIn animation-delay-200 w-full max-w-7xl mt-24 mr-auto ml-auto">
+      <div class="relative overflow-hidden rounded-3xl border border-white/10 backdrop-blur">
+        <!-- Soft radial glow -->
+        <div aria-hidden="true" class="pointer-events-none absolute inset-0 overflow-hidden">
+          <div class="absolute left-0 bottom-0 w-[60%] h-[80%] rounded-[40%] bg-gradient-to-tr from-white/5 to-transparent blur-3xl"></div>
+        </div>
+
+        <!-- Featured Image Section -->
+        {% if post.thumbnail %}
+          <div class="aspect-[21/9] relative overflow-hidden">
+            <img style="view-transition-name: project-image-{{ post.slug }};" class="w-full h-full object-cover" src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt ?: post.title }}">
+            <!-- Dark overlay over image -->
+            <div class="absolute inset-0 bg-black/30"></div>
+            <!-- Gradient overlay -->
+            <div class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/30 to-black/80"></div>
+
+            <!-- Title Overlay -->
+            <div class="absolute bottom-0 left-0 right-0 p-8 sm:p-12">
+              <div class="max-w-4xl">
+                <h1 style="view-transition-name: project-title-{{ post.slug }};" class="text-4xl sm:text-5xl md:text-6xl leading-[1.05] font-light text-white tracking-tighter animate-fadeInLeft animation-delay-300">
+                  {{ post.title }}
+                </h1>
+                {% if post.excerpt %}
+                  <p style="view-transition-name: project-excerpt-{{ post.slug }};" class="text-base sm:text-lg text-neutral-300 mt-4 max-w-[60ch] animate-fadeInRight animation-delay-400">
+                    {{ post.excerpt }}
+                  </p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <!-- Fallback if no featured image -->
+          <div class="p-8 sm:p-12">
+            <h1 style="view-transition-name: project-title-{{ post.slug }};" class="text-4xl sm:text-5xl md:text-6xl leading-[1.05] font-light text-white tracking-tighter animate-fadeInLeft animation-delay-300">
+              {{ post.title }}
+            </h1>
+            {% if post.excerpt %}
+              <p style="view-transition-name: project-excerpt-{{ post.slug }};" class="text-base sm:text-lg text-neutral-300 mt-4 max-w-[60ch] animate-fadeInRight animation-delay-400">
+                {{ post.excerpt }}
+              </p>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </section>
+
+    <!-- Project Meta -->
+    <section class="relative z-10 sm:p-8 w-full max-w-7xl mt-8 mr-auto ml-auto">
+      <div class="rounded-3xl border border-white/10 backdrop-blur p-6 sm:p-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <!-- Client Name -->
+          {% if post.meta('client_name') %}
+          <div class="animate-fadeInUp animation-delay-100">
+            <p class="text-xs text-neutral-400 uppercase tracking-wider mb-2">Client</p>
+            <p class="text-base font-medium text-white">{{ post.meta('client_name') }}</p>
+          </div>
+          {% endif %}
+
+          <!-- Technologies -->
+          {% if post.meta('skills_technologies') %}
+          <div class="animate-fadeInUp animation-delay-200">
+            <p class="text-xs text-neutral-400 uppercase tracking-wider mb-2">Technologies</p>
+            <p class="text-sm text-neutral-300">{{ post.meta('skills_technologies') }}</p>
+          </div>
+          {% endif %}
+
+          <!-- Date -->
+          <div class="animate-fadeInUp animation-delay-300">
+            <p class="text-xs text-neutral-400 uppercase tracking-wider mb-2">Date</p>
+            <p class="text-base font-medium text-white">{{ post.date }}</p>
+          </div>
+
+          <!-- External Link -->
+          {% if post.meta('link_type') == 'external' and post.meta('link_external_url') %}
+          <div class="animate-fadeInUp animation-delay-400">
+            <a href="{{ post.meta('link_external_url') }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors">
+              Visit Project
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link">
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14 21 3"></path>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              </svg>
+            </a>
+          </div>
+          {% endif %}
+
+          <!-- Prototype Link -->
+          {% if post.meta('link_type') == 'prototype' and post.meta('link_prototype_template') %}
+          <div class="animate-fadeInUp animation-delay-400">
+            <a href="/prototypes/{{ post.meta('link_prototype_template') }}" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors">
+              View Prototype
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="relative z-10 sm:p-8 w-full max-w-7xl mt-8 mr-auto ml-auto animate-fadeInUp animation-delay-500">
+      <div class="rounded-3xl border border-white/10 backdrop-blur p-8 sm:p-12">
+        <div class="prose prose-invert max-w-none
+                  prose-headings:text-white prose-headings:font-light prose-headings:tracking-tight
+                  prose-h2:text-3xl prose-h2:mt-8 prose-h2:mb-4
+                  prose-h3:text-2xl prose-h3:mt-6 prose-h3:mb-3
+                  prose-p:text-neutral-300 prose-p:leading-relaxed prose-p:text-base
+                  prose-a:text-white prose-a:underline prose-a:decoration-white/30 hover:prose-a:decoration-white/60
+                  prose-strong:text-white prose-strong:font-semibold
+                  prose-ul:text-neutral-300 prose-ul:list-disc
+                  prose-ol:text-neutral-300
+                  prose-li:my-1
+                  prose-code:text-neutral-200 prose-code:bg-white/5 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded
+                  prose-pre:bg-neutral-900 prose-pre:border prose-pre:border-white/10 prose-pre:rounded-xl
+                  prose-blockquote:border-l-white/20 prose-blockquote:text-neutral-400 prose-blockquote:italic
+                  prose-img:rounded-xl prose-img:border prose-img:border-white/10">
+          {{ post.content }}
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonial -->
+    {% if post.meta('show_client') and post.meta('testimonial') %}
+    <section class="relative z-10 sm:p-8 w-full max-w-7xl mt-8 mr-auto ml-auto animate-fadeInUp animation-delay-600">
+      <div class="rounded-3xl border border-white/10 backdrop-blur p-8 sm:p-12">
+        <div>
+          <p class="text-sm font-medium text-white tracking-tight mb-6">Client Feedback</p>
+
+          {% if post.meta('testimonial').quote %}
+            <blockquote class="text-lg text-neutral-300 italic mb-6 leading-relaxed">
+              "{{ post.meta('testimonial').quote }}"
+            </blockquote>
+          {% endif %}
+
+          <div class="flex items-center gap-4">
+            {% if post.meta('testimonial').author_photo %}
+              <img src="{{ post.meta('testimonial').author_photo }}" alt="{{ post.meta('testimonial').author_name ?: 'Client testimonial' }}" class="w-12 h-12 rounded-full object-cover border border-white/10">
+            {% endif %}
+            <div>
+              {% if post.meta('testimonial').author_name %}
+                <p class="text-base font-medium text-white">{{ post.meta('testimonial').author_name }}</p>
+              {% endif %}
+              {% if post.meta('testimonial').author_position %}
+                <p class="text-sm text-neutral-400">{{ post.meta('testimonial').author_position }}</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Project Gallery -->
+    {% if post.meta('show_gallery') and post.meta('project_gallery') %}
+    <section class="relative z-10 sm:p-8 w-full max-w-7xl mt-8 mr-auto ml-auto animate-fadeInUp animation-delay-700">
+      <div class="rounded-3xl border border-white/10 backdrop-blur p-8 sm:p-12">
+        <div>
+          <h2 class="text-3xl font-light text-white tracking-tight mb-8">Project Gallery</h2>
+
+          <!-- Carousel Container -->
+          <div class="relative">
+            <div class="flex overflow-x-scroll snap-x snap-mandatory gap-4 scrollbar-hide">
+              {% for image_id in post.meta('project_gallery') %}
+              {% set gallery_image = TimberImage(image_id) %}
+              <div class="snap-center shrink-0 w-[85%] sm:w-[75%] md:w-[65%] lg:w-[55%]">
+                <div class="relative overflow-hidden rounded-xl border border-white/10 group hover:border-white/20 transition-all duration-300">
+                  <div class="aspect-video relative overflow-hidden">
+                    <img src="{{ gallery_image.src('large') }}" alt="{{ gallery_image.alt ?: post.title ~ ' gallery image' }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-b from-black/0 to-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <!-- Back to Portfolio CTA -->
+    <section class="relative z-10 sm:p-8 w-full max-w-7xl mt-8 mb-24 mr-auto ml-auto animate-fadeInUp animation-delay-800">
+      <div class="rounded-3xl border border-white/10 backdrop-blur p-8 text-center">
+        <a href="/portfolio" class="inline-flex items-center gap-2 text-sm font-semibold text-white hover:text-neutral-300 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left">
+            <path d="M5 12h14"></path>
+            <path d="m12 19-7-7 7-7"></path>
+          </svg>
+          Back to Portfolio
+        </a>
+      </div>
+    </section>
+</main>
+{% endblock %}

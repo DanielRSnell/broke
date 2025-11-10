@@ -5,14 +5,15 @@
  * Context: posts (array of Timber\Post objects)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
+{% block content %}
+<main class="flex-grow">
 	<div class="blog-home">
 		{# Blog posts listing #}
-
+		{% for post in posts %}
+			{% include 'partials/post-card.twig' with { post: post } %}
+		{% endfor %}
 	</div>
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

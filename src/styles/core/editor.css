@@ -7,7 +7,7 @@
 /* Ensure editor matches frontend styling */
 .editor-styles-wrapper {
   /* Editor background should match site background */
-  background-color: var(--wp--preset--color--surface);
+  background: var(--color-neutral-590);
 
   /* Ensure editor content area uses proper spacing */
   padding: 2rem;

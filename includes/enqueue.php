@@ -29,17 +29,30 @@ function blank_theme_enqueue_block_assets() {
         }
     }
 
-    // Enqueue CSS files if enabled
+    // Enqueue or inline CSS files if enabled
     if (!empty($settings['src']['styles']) && is_dir($production_dir)) {
         $css_files = glob($production_dir . '/*.css');
+
+        // Check if inline_styles is enabled
+        $inline_styles = !empty($settings['src']['inline_styles']);
 
         foreach ($css_files as $css_file) {
             $filename = basename($css_file);
             $handle = 'blank-theme-' . pathinfo($filename, PATHINFO_FILENAME);
-            $file_url = $production_uri . '/' . $filename;
-            $version = filemtime($css_file);
 
-            wp_enqueue_style($handle, $file_url, array(), $version);
+            if ($inline_styles) {
+                // Inline the CSS directly in the head
+                add_action('wp_head', function() use ($css_file, $handle) {
+                    echo '<style id="' . esc_attr($handle) . '-inline-css">';
+                    echo file_get_contents($css_file);
+                    echo '</style>';
+                }, 10);
+            } else {
+                // Enqueue CSS file normally
+                $file_url = $production_uri . '/' . $filename;
+                $version = filemtime($css_file);
+                wp_enqueue_style($handle, $file_url, array(), $version);
+            }
         }
     }
 }

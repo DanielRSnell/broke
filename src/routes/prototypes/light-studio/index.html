@@ -1,0 +1,907 @@
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BROKE Studio — Shopify Development & Growth</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<link id="all-fonts-link-font-geist" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist">.font-geist { font-family: 'Geist', sans-serif !important; }</style><link id="all-fonts-link-font-roboto" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-roboto">.font-roboto { font-family: 'Roboto', sans-serif !important; }</style><link id="all-fonts-link-font-montserrat" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-montserrat">.font-montserrat { font-family: 'Montserrat', sans-serif !important; }</style><link id="all-fonts-link-font-poppins" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-poppins">.font-poppins { font-family: 'Poppins', sans-serif !important; }</style><link id="all-fonts-link-font-playfair" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;900&amp;display=swap"><style id="all-fonts-style-font-playfair">.font-playfair { font-family: 'Playfair Display', serif !important; }</style><link id="all-fonts-link-font-instrument-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:wght@400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-instrument-serif">.font-instrument-serif { font-family: 'Instrument Serif', serif !important; }</style><link id="all-fonts-link-font-merriweather" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&amp;display=swap"><style id="all-fonts-style-font-merriweather">.font-merriweather { font-family: 'Merriweather', serif !important; }</style><link id="all-fonts-link-font-bricolage" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-bricolage">.font-bricolage { font-family: 'Bricolage Grotesque', sans-serif !important; }</style><link id="all-fonts-link-font-jakarta" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-jakarta">.font-jakarta { font-family: 'Plus Jakarta Sans', sans-serif !important; }</style><link id="all-fonts-link-font-manrope" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-manrope">.font-manrope { font-family: 'Manrope', sans-serif !important; }</style><link id="all-fonts-link-font-space-grotesk" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-space-grotesk">.font-space-grotesk { font-family: 'Space Grotesk', sans-serif !important; }</style><link id="all-fonts-link-font-work-sans" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-work-sans">.font-work-sans { font-family: 'Work Sans', sans-serif !important; }</style><link id="all-fonts-link-font-pt-serif" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-pt-serif">.font-pt-serif { font-family: 'PT Serif', serif !important; }</style><link id="all-fonts-link-font-geist-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-geist-mono">.font-geist-mono { font-family: 'Geist Mono', monospace !important; }</style><link id="all-fonts-link-font-space-mono" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&amp;display=swap"><style id="all-fonts-style-font-space-mono">.font-space-mono { font-family: 'Space Mono', monospace !important; }</style><link id="all-fonts-link-font-quicksand" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&amp;display=swap"><style id="all-fonts-style-font-quicksand">.font-quicksand { font-family: 'Quicksand', sans-serif !important; }</style><link id="all-fonts-link-font-nunito" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&amp;display=swap"><style id="all-fonts-style-font-nunito">.font-nunito { font-family: 'Nunito', sans-serif !important; }</style></head>
+<body class="antialiased text-gray-900 bg-neutral-100" style="font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, Apple Color Emoji, Segoe UI Emoji;">
+
+    <!-- Background layers -->
+    <div class="fixed inset-0 -z-10">
+        <!-- subtle dots -->
+        <div class="absolute inset-0 opacity-[0.4] bg-[radial-gradient(#e5e5e5_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <!-- grid lines -->
+        <div class="absolute inset-0 opacity-[0.15] bg-[linear-gradient(to_right,rgba(0,0,0,0.08)_1px,transparent_1px),linear-gradient(to_bottom,rgba(0,0,0,0.08)_1px,transparent_1px)] [background-size:120px_1px,1px_120px]"></div>
+        <!-- gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-50/60 via-transparent to-gray-50/60"></div>
+    </div>
+
+    <!-- Header -->
+    <header class="max-w-7xl sm:px-6 mr-auto ml-auto pt-6 pr-4 pl-4">
+        <div class="flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="h-1.5 w-1.5 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs sm:text-sm tracking-tight text-gray-600 font-geist">STUDIO/ <span id="localTime" class="tabular-nums font-geist">23:19:22</span></span>
+            </div>
+            <div class="hidden sm:flex items-center gap-2 text-gray-400">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="grip-horizontal" class="lucide lucide-grip-horizontal w-4 h-4 stroke-1.5"><circle cx="12" cy="9" r="1"></circle><circle cx="19" cy="9" r="1"></circle><circle cx="5" cy="9" r="1"></circle><circle cx="12" cy="15" r="1"></circle><circle cx="19" cy="15" r="1"></circle><circle cx="5" cy="15" r="1"></circle></svg>
+            </div>
+            <a href="#contact" class="group inline-flex items-center gap-2 hover:bg-gray-800 text-sm font-medium text-white tracking-tight bg-gray-900 border-gray-200 border rounded-full pt-2 pr-4 pb-2 pl-4">
+                <span class="font-geist">Start Project</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4 stroke-1.5 transition-transform group-hover:translate-x-0.5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="max-w-7xl sm:px-6 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+  <div class="relative sm:mt-16 shadow-[0_8px_30px_rgba(0,0,0,0.08)] overflow-hidden shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] bg-white border-white/20 border rounded-[40px] mt-10">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+    </div>
+
+    <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+      <h1 class="leading-none select-none text-gray-900 tracking-tight">
+  <div class="flex gap-8 items-start">
+    <div class="flex-1">
+      <span class="block text-[12vw] sm:text-[10vw] md:text-[8vw] lg:text-[9vw] font-semibold" style="overflow: hidden; letter-spacing: -0.15em;">
+        <span style="display: inline-block; animation: 0.8s ease-out 0s 1 normal forwards running letterSlideIn; transform: translateY(-100%); opacity: 0;" class="font-geist tracking-tighter">B</span>
+        <span style="display: inline-block; animation: 0.8s ease-out 0.1s 1 normal forwards running letterSlideIn; transform: translateY(-100%); opacity: 0;" class="font-geist tracking-tighter">R</span>
+        <span style="display: inline-block; animation: 0.8s ease-out 0.2s 1 normal forwards running letterSlideIn; transform: translateY(-100%); opacity: 0;" class="font-geist tracking-tighter">O</span>
+        <span style="display: inline-block; animation: 0.8s ease-out 0.3s 1 normal forwards running letterSlideIn; transform: translateY(-100%); opacity: 0;" class="font-geist tracking-tighter">K</span>
+        <span style="display: inline-block; animation: 0.8s ease-out 0.4s 1 normal forwards running letterSlideIn; transform: translateY(-100%); opacity: 0;" class="font-geist tracking-tighter">E</span>
+      </span>
+    </div>
+    <div class="w-80 hidden lg:block pt-8">
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <span class="font-geist">Austin, Texas</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path></svg>
+          <span class="font-geist">Full-Stack Developer</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+          <span class="font-geist">50+ Shopify Stores Built</span>
+        </div>
+        <div class="flex items-center gap-2 text-sm text-gray-600">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+          <span class="font-geist">Revenue-Focused Development</span>
+        </div>
+        <div class="border-gray-200 border-t pt-4">
+          <p class="leading-relaxed text-sm text-gray-500 font-geist">
+            Shopify development that actually drives revenue. Custom themes, conversion optimization, and technical marketing for high-growth e-commerce brands.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    @keyframes letterSlideIn {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      50% {
+        opacity: 0.5;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</h1>
+
+      <div class="mt-6 sm:mt-10 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="border-black/5 border-t pt-5">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" class="lucide lucide-award stroke-1.5 mt-0.5 w-[20px] h-[20px]" style="width: 20px; height: 20px; color: rgb(212, 212, 212);"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+            <div class="">
+              <p class="text-sm font-medium tracking-tight text-gray-900 font-geist">Based in San Francisco</p>
+              <p class="text-xs text-gray-500 mt-1 font-geist">California • Working globally</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-black/5 border-t pt-5">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" class="lucide lucide-award stroke-1.5 mt-0.5 w-[20px] h-[20px]" style="width: 20px; height: 20px; color: rgb(212, 212, 212);"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+            <div class="">
+              <p class="text-sm font-medium tracking-tight text-gray-900 font-geist">Full-Service Design Studio</p>
+              <p class="text-xs text-gray-500 mt-1 font-geist">Brand • Digital • Strategy</p>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-black/5 pt-5">
+          <div class="flex items-start gap-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" data-lucide="award" class="lucide lucide-award stroke-1.5 mt-0.5 w-[20px] h-[20px]" style="width: 20px; height: 20px; color: rgb(212, 212, 212);"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+            <div class="">
+              <p class="text-sm font-medium tracking-tight text-gray-900 font-geist">Award-Winning Team</p>
+              <p class="text-xs text-gray-500 mt-1 font-geist">15+ industry recognitions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sm:mt-10 mt-8">
+        <div class="relative overflow-hidden bg-white/5 border-white/10 border rounded-2xl">
+  <div class="absolute inset-0 bg-gradient-to-tr from-blue-500/10 via-transparent to-purple-500/10 pointer-events-none"></div>
+  <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b1c8bd29-43a2-426c-9dd1-916b14f8554d_3840w.jpg" alt="Creative team working on design projects" class="w-full h-[52vh] sm:h-[60vh] object-cover" loading="eager">
+  <div class="absolute inset-0 bg-gradient-to-t from-gray-900/60 via-transparent to-transparent pointer-events-none"></div>
+
+  <div class="absolute inset-0 flex items-end">
+    <div class="w-full sm:p-8 pt-6 pr-6 pb-6 pl-6">
+  <div class="max-w-3xl">
+    <h2 class="text-3xl sm:text-4xl lg:text-7xl text-white font-geist tracking-tighter drop-shadow-lg">Design that moves brands forward</h2>
+    <p class="sm:text-lg leading-relaxed text-lg font-normal text-white/90 font-geist mt-3 drop-shadow-sm">
+      We craft brand identities, digital products, and strategic campaigns for ambitious teams. From concept to launch, our studio blends clarity, utility, and aesthetics to create work that performs and endures. Explore a curated reel of recent collaborations and outcomes.
+    </p>
+    <div class="mt-4">
+      <a href="#showreel" class="inline-flex items-center gap-2 hover:bg-white/15 transition-all duration-300 text-sm font-medium text-white tracking-tight bg-white/8 border-white/15 border rounded-full pt-2 pr-4 pb-2 pl-4 shadow-sm backdrop-blur-sm">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="play" class="lucide lucide-play w-4 h-4 stroke-1.5"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg>
+        <span class="font-geist">Watch Showreel</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6">
+    <div class="rounded-xl bg-white/6 backdrop-blur-sm border border-white/10 p-3 shadow-sm hover:bg-white/10 transition-all duration-300">
+      <div class="text-xl font-semibold tracking-tight text-white font-geist drop-shadow-sm">200+</div>
+      <p class="text-[11px] text-white/80 mt-0.5 font-geist">Projects Delivered</p>
+    </div>
+    <div class="rounded-xl bg-white/6 backdrop-blur-sm border border-white/10 p-3 shadow-sm hover:bg-white/10 transition-all duration-300">
+      <div class="text-xl font-semibold tracking-tight text-white font-geist drop-shadow-sm">50+</div>
+      <p class="text-[11px] text-white/80 mt-0.5 font-geist">Clients Worldwide</p>
+    </div>
+    <div class="rounded-xl bg-white/6 backdrop-blur-sm border border-white/10 p-3 shadow-sm hover:bg-white/10 transition-all duration-300">
+      <div class="text-xl font-semibold tracking-tight text-white font-geist drop-shadow-sm">8</div>
+      <p class="text-[11px] text-white/80 mt-0.5 font-geist">Years in Practice</p>
+    </div>
+    <div class="rounded-xl bg-white/6 backdrop-blur-sm border border-white/10 p-3 shadow-sm hover:bg-white/10 transition-all duration-300">
+      <div class="text-xl font-semibold tracking-tight text-white font-geist drop-shadow-sm">12</div>
+      <p class="text-[11px] text-white/80 mt-0.5 font-geist">Team Members</p>
+    </div>
+  </div>
+</div>
+  </div>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Showcase -->
+    <section class="max-w-7xl sm:px-6 sm:mt-20 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden rounded-[40px] border border-white/20 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+            </div>
+            <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl sm:text-2xl text-gray-900 font-geist tracking-tighter">Recent Work</h2>
+                    <a href="#" class="text-sm text-gray-700 hover:text-gray-900 inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 rounded-full px-3 py-1.5 border border-white/20">
+                        <span class="font-geist">View all</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-up-right" class="lucide lucide-arrow-up-right w-4 h-4 stroke-1.5"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+                    </a>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                    <!-- Card 1 -->
+                    <article class="group overflow-hidden bg-white/80 border-black/5 border rounded-xl backdrop-blur-sm">
+                        <div class="relative aspect-[16/10]">
+                            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/ce4a30c0-92e5-44c5-9ae4-49b73739f76e_800w.jpg" alt="Modern brand identity design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="pt-4 pr-4 pb-4 pl-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="palette" class="lucide lucide-palette w-4 h-4 stroke-1.5"><path d="M12 22a1 1 0 0 1 0-20 10 9 0 0 1 10 9 5 5 0 0 1-5 5h-2.25a1.75 1.75 0 0 0-1.4 2.8l.3.4a1.75 1.75 0 0 1-1.4 2.8z"></path><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle></svg>
+                                <span class="font-geist">Brand Identity</span>
+                            </div>
+                            <h3 class="mt-2 text-base font-semibold tracking-tight text-gray-900 font-geist">Vertex Brand System</h3>
+                            <p class="text-sm text-gray-600 font-geist mt-1">Complete visual identity for fintech startup.</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 2 -->
+                    <article class="group rounded-xl overflow-hidden border border-black/5 bg-white/80 backdrop-blur-sm">
+                        <div class="relative aspect-[16/10]">
+                            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/8a77358e-e157-495a-9eeb-4cbf66ca6511_800w.jpg" alt="Digital product design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="pt-4 pr-4 pb-4 pl-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="monitor" class="lucide lucide-monitor w-4 h-4 stroke-1.5"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                                <span class="font-geist">Digital Product</span>
+                            </div>
+                            <h3 class="mt-2 text-base font-semibold tracking-tight text-gray-900 font-geist">Atlas Dashboard</h3>
+                            <p class="text-sm text-gray-600 font-geist mt-1">Enterprise SaaS platform redesign.</p>
+                        </div>
+                    </article>
+
+                    <!-- Card 3 -->
+                    <article class="group rounded-xl overflow-hidden border border-black/5 bg-white/80 backdrop-blur-sm">
+                        <div class="relative aspect-[16/10]">
+                            <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/f45ce15d-81e2-4b65-88ee-bf4636d661cc_1600w.jpg" alt="Website design" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+                        </div>
+                        <div class="pt-4 pr-4 pb-4 pl-4">
+                            <div class="flex items-center gap-2 text-xs text-gray-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="globe" class="lucide lucide-globe w-4 h-4 stroke-1.5"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
+                                <span class="font-geist">Web Design</span>
+                            </div>
+                            <h3 class="mt-2 text-base font-semibold tracking-tight text-gray-900 font-geist">Nexus E-commerce</h3>
+                            <p class="mt-1 text-sm text-gray-600 font-geist">Modern shopping experience for lifestyle brand.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="max-w-7xl sm:px-6 sm:mt-20 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.08)] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] bg-white border-white/20 border rounded-[40px]">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+            </div>
+            <div class="relative">
+                <div class="flex border-white/10 border-b pt-6 pr-6 pb-6 pl-6 items-end justify-between">
+                    <h2 class="text-2xl sm:text-3xl text-gray-900 font-geist tracking-tighter">About</h2>
+                    <p class="hidden sm:block text-xs text-gray-500 font-geist">Developer, approach, results</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-12 border-t border-black/5">
+                    <!-- Studio Info -->
+                    <div class="md:col-span-3 md:border-b-0 md:border-r border-white/10 border-b pt-6 pr-6 pb-6 pl-6">
+                        <p class="text-sm text-gray-500 font-geist">Shopify Development Studio</p>
+                        <p class="mt-1 text-lg font-medium tracking-tight text-gray-900 font-geist">BROKE Studio</p>
+                        <div class="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="map-pin" class="lucide lucide-map-pin w-4 h-4 stroke-1.5"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span class="font-geist">Austin, TX • Remote</span>
+                        </div>
+                    </div>
+
+                    <!-- Team Image -->
+                    <div class="relative md:col-span-6 md:row-span-2 md:border-b-0 md:border-r border-white/10 border-b">
+    <div class="relative aspect-[16/10] md:aspect-[9/10] lg:aspect-[16/10]">
+        <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/3bbbf364-3029-4f9e-9987-eb90d946b1b1_1600w.jpg" alt="Creative team collaborating in modern studio space" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-tr from-black/20 via-transparent to-transparent pointer-events-none"></div>
+
+        <!-- Glass overlay stats -->
+        <div class="hidden md:block absolute inset-0 pointer-events-none">
+            <div class="absolute top-5 right-5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm p-4 ring-1 ring-white/10">
+                <div class="text-2xl lg:text-3xl text-white font-geist tracking-tighter drop-shadow-sm">50+</div>
+                <p class="text-[11px] text-white/80 mt-0.5 font-geist">Shopify Stores Built</p>
+            </div>
+            <div class="absolute bottom-5 left-5 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm p-4 ring-1 ring-white/10">
+                <div class="text-2xl lg:text-3xl text-white font-geist tracking-tighter drop-shadow-sm">5+</div>
+                <p class="text-[11px] text-white/80 mt-0.5 font-geist">Years Experience</p>
+            </div>
+            <div class="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-xl bg-white/10 border border-white/20 backdrop-blur-sm p-4 ring-1 ring-white/10">
+                <div class="text-2xl lg:text-3xl text-white font-geist tracking-tighter drop-shadow-sm">$10M+</div>
+                <p class="text-[11px] text-white/80 mt-0.5 font-geist">Revenue Generated</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+                    <!-- Right stat (top) -->
+                    <div class="p-6 md:col-span-3 border-b md:border-b-0">
+                        <div class="text-3xl text-gray-900 font-geist tracking-tighter">98%</div>
+                        <p class="text-xs text-gray-500 mt-1 font-geist">Client Satisfaction</p>
+                    </div>
+
+                    <!-- Studio Bio -->
+                    <div class="md:col-span-3 md:border-t md:border-r border-black/5 border-t pt-6 pr-6 pb-6 pl-6">
+                        <p class="text-sm text-gray-600 leading-relaxed font-geist">
+                            Full-stack developer focused on building Shopify stores that actually make money. No fluff, no BS—just clean code, fast sites, and conversion optimization that drives real revenue for high-growth brands.
+                        </p>
+                        <div class="mt-4 inline-flex items-center gap-2 text-sm font-medium tracking-tight text-white bg-gray-900 hover:bg-gray-800 rounded-full px-3 py-1.5 border border-white/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="code" class="lucide lucide-code w-4 h-4 stroke-1.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            <span class="font-geist">View Work</span>
+                        </div>
+                    </div>
+
+                    <!-- Right stat (bottom) -->
+                    <div class="md:col-span-3 border-black/5 border-t pt-6 pr-6 pb-6 pl-6">
+                        <div class="text-3xl text-gray-900 font-geist tracking-tighter">30%</div>
+                        <p class="text-xs text-gray-500 mt-1 font-geist">Avg Revenue Increase</p>
+                    </div>
+                </div>
+
+                <!-- Mobile stats -->
+                <div class="md:hidden border-t border-white/10 grid grid-cols-3">
+                    <div class="p-4 text-center border-r border-white/10">
+                        <div class="text-xl font-semibold tracking-tight text-gray-900 font-geist">50+</div>
+                        <p class="text-[11px] text-gray-500 mt-0.5 font-geist">Stores Built</p>
+                    </div>
+                    <div class="p-4 text-center border-r border-white/10">
+                        <div class="text-xl font-semibold tracking-tight text-gray-900 font-geist">5+</div>
+                        <p class="text-[11px] text-gray-500 mt-0.5 font-geist">Years</p>
+                    </div>
+                    <div class="p-4 text-center">
+                        <div class="text-xl font-semibold tracking-tight text-gray-900 font-geist">$10M+</div>
+                        <p class="text-[11px] text-gray-500 mt-0.5 font-geist">Revenue</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="max-w-7xl sm:px-6 sm:mt-20 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden rounded-[40px] border border-white/20 bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+            </div>
+            <div class="relative">
+                <div class="flex border-white/10 border-b pt-6 pr-6 pb-6 pl-6 items-end justify-between">
+                    <h2 class="text-2xl sm:text-3xl text-gray-900 font-geist tracking-tighter">Services</h2>
+                    <div class="hidden sm:flex items-center gap-2">
+                        <a href="#" class="inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-xs font-medium tracking-tight text-gray-700 bg-gray-100 hover:bg-gray-200 border border-white/20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="download" class="lucide lucide-download w-3.5 h-3.5 stroke-1.5"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg>
+                            <span class="font-geist">Services Guide</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service 1 -->
+                <div class="sm:p-8 border-white/10 border-b pt-6 pr-6 pb-6 pl-6">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                        <div class="md:col-span-1">
+                            <div class="text-3xl sm:text-4xl text-gray-400 tabular-nums font-geist tracking-tighter">1</div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">Custom Theme Development from Scratch</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">Mobile-First Responsive Design</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">Performance &amp; Speed Optimization</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-4 flex items-center gap-3">
+                                <div class="aspect-[4/3] w-24 sm:w-28 rounded-md overflow-hidden border border-white/20">
+                                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/a9c8b9c0-3bcd-4910-8076-82f53f9a6acd_800w.jpg" alt="Brand identity materials" class="w-full h-full object-cover">
+                                </div>
+                                <div class="aspect-[4/3] w-24 sm:w-28 rounded-md overflow-hidden border border-white/20">
+                                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/00f75d26-1523-4d97-b303-ce380c94d0e7_800w.jpg" alt="Logo design concepts" class="w-full h-full object-cover">
+                                </div>
+                                <div class="aspect-[4/3] w-24 sm:w-28 rounded-md overflow-hidden border border-white/20">
+                                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/41f44e91-a4d8-4042-8253-0c6a79be833b_800w.jpg" alt="Business stationery" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 md:text-right">
+                            <h3 class="text-lg sm:text-xl tracking-tight font-semibold text-gray-900 font-geist">Custom Shopify Themes</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-geist">Built for conversion and speed</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="sm:p-8 border-black/5 border-t pt-6 pr-6 pb-6 pl-6">
+                    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+                        <div class="md:col-span-1">
+                            <div class="text-3xl sm:text-4xl text-gray-400 tabular-nums font-geist tracking-tighter">2</div>
+                        </div>
+                        <div class="md:col-span-8">
+                            <ul class="space-y-2">
+                                <li class="flex items-start gap-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">Checkout Experience Optimization</span>
+                                </li>
+                                <li class="flex gap-2 text-sm text-gray-700 items-start">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">A/B Testing &amp; Conversion Rate Optimization</span>
+                                </li>
+                                <li class="flex items-start gap-2 text-sm text-gray-700">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                                    <span class="font-geist">Revenue-Focused UX Design</span>
+                                </li>
+                            </ul>
+
+                            <div class="mt-4 flex items-center gap-3">
+                                <div class="aspect-[16/10] w-28 sm:w-32 rounded-md overflow-hidden border border-white/20">
+                                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/2787ba90-ce87-4cab-9679-6f97ebd85857_800w.jpg" alt="Website design mockups" class="w-full h-full object-cover">
+                                </div>
+                                <div class="aspect-[16/10] w-28 sm:w-32 rounded-md overflow-hidden border border-white/20">
+                                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/ab172164-87bf-46ed-b6da-dcf1239c01d0_800w.jpg" alt="Mobile app interface" class="w-full h-full object-cover">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:col-span-3 md:text-right">
+                            <h3 class="text-lg sm:text-xl tracking-tight font-semibold text-gray-900 font-geist">Conversion Optimization</h3>
+                            <p class="text-xs text-gray-500 mt-1 font-geist">Turn visitors into customers</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="sm:p-8 border-black/5 border-t pt-6 pr-6 pb-6 pl-6">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
+        <div class="md:col-span-1">
+            <div class="text-3xl sm:text-4xl text-gray-400 tabular-nums font-geist tracking-tighter">3</div>
+        </div>
+        <div class="md:col-span-8">
+            <ul class="space-y-2">
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="font-geist">Technical SEO &amp; Site Speed</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="font-geist">Analytics &amp; Tracking Implementation</span>
+                </li>
+                <li class="flex items-start gap-2 text-sm text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="check" class="lucide lucide-check w-3.5 h-3.5 stroke-1.5 mt-0.5 text-green-500"><path d="M20 6 9 17l-5-5"></path></svg>
+                    <span class="font-geist">Marketing Automation Setup</span>
+                </li>
+            </ul>
+
+            <div class="mt-4 flex items-center gap-3">
+                <div class="aspect-[16/10] w-32 sm:w-40 rounded-md overflow-hidden border border-white/20">
+                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/e1b23bf1-d8af-47dc-a35a-70e03d8cf014_800w.jpg" alt="Strategy workshop" class="w-full h-full object-cover">
+                </div>
+                <div class="aspect-[16/10] w-32 sm:w-40 rounded-md overflow-hidden border border-white/20">
+                    <img src="https://hoirqrkdgbmvpwutwuwj-all.supabase.co/storage/v1/object/public/assets/assets/b876c14b-5b29-40a0-b0db-bb155921890a_800w.jpg" alt="Creative brainstorming" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+        <div class="md:col-span-3 md:text-right">
+            <h3 class="text-lg sm:text-xl tracking-tight font-semibold text-gray-900 font-geist">Technical Marketing</h3>
+            <p class="text-xs text-gray-500 mt-1 font-geist">Growth engineering that works</p>
+        </div>
+    </div>
+</div>
+    </div></div></section><section id="faq" class="max-w-7xl sm:px-6 sm:mt-20 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+  <div class="relative overflow-hidden rounded-[40px] border border-white/20 bg-white shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+    </div>
+
+    <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        <!-- Intro -->
+        <div class="md:col-span-5">
+          <h2 class="text-[56px] sm:text-[80px] leading-none font-semibold text-gray-900 tracking-tighter font-geist">Questions.</h2>
+          <p class="mt-3 text-sm sm:text-base text-gray-600 font-geist">
+            Find answers to common questions about Shopify development, pricing, timelines, and how we drive revenue for e-commerce brands.
+          </p>
+          <a href="#contact" class="mt-5 inline-flex items-center gap-2 rounded-full px-3 py-1.5 text-sm font-medium tracking-tight text-gray-700 bg-gray-100 hover:bg-gray-200 border border-white/20">
+            <span class="font-geist">Get in touch</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" class="lucide lucide-message-circle w-4 h-4 stroke-1.5"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+          </a>
+        </div>
+
+        <!-- Accordion -->
+        <div class="md:col-span-7">
+          <div class="space-y-3">
+            <!-- Item 1 (open) -->
+            <div class="bg-white border-white/20 border rounded-2xl shadow-sm" data-accordion-item="" data-open="true">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="true" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">How long does a custom Shopify theme take?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucideminus="" w-5="" h-5="" stroke-1.5"=""><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="text-sm text-gray-600 font-geist pr-5 pb-5 pl-5" data-qa="a">
+                Custom Shopify themes typically take 4-8 weeks depending on complexity. We start with discovery, move through design mockups, development, testing, and launch. You get weekly updates and can track progress in real-time.
+              </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="rounded-2xl border border-white/20 bg-white shadow-sm" data-accordion-item="">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">Do you work with existing Shopify stores or only new builds?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" data-icon="minus" class="lucide lucide-minus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="px-5 pb-5 text-sm text-gray-600 font-geist hidden" data-qa="a">
+                Both. We can optimize your existing store for better conversion rates, migrate you to a custom theme, or build a new store from scratch. Most clients see 20-40% revenue increases after optimization.
+              </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="rounded-2xl border border-white/20 bg-white shadow-sm" data-accordion-item="">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">What's your pricing structure?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" data-icon="minus" class="lucide lucide-minus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="px-5 pb-5 text-sm text-gray-600 font-geist hidden" data-qa="a">
+                Project-based pricing. Custom themes start at $15k, conversion optimization packages at $8k, and technical marketing at $5k/month. Every project is scoped based on your specific needs and revenue goals.
+              </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="rounded-2xl border border-white/20 bg-white shadow-sm" data-accordion-item="">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">What types of e-commerce brands do you work with?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" data-icon="minus" class="lucide lucide-minus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="px-5 pb-5 text-sm text-gray-600 font-geist hidden" data-qa="a">
+                High-growth DTC brands doing $500k+ in annual revenue. Fashion, beauty, home goods, supplements—if you're serious about scaling and need technical expertise beyond basic templates, we're a good fit.
+              </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="rounded-2xl border border-white/20 bg-white shadow-sm" data-accordion-item="">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">Do you guarantee results?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" data-icon="minus" class="lucide lucide-minus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="px-5 pb-5 text-sm text-gray-600 font-geist hidden" data-qa="a">
+                No one can guarantee specific revenue numbers—anyone who does is lying. What I can promise: clean code, faster site speed, better conversion rates, and transparent reporting on what's working. Results speak for themselves.
+              </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="rounded-2xl border border-white/20 bg-white shadow-sm" data-accordion-item="">
+              <button type="button" class="w-full flex items-center justify-between gap-4 p-5 text-left" aria-expanded="false" data-accordion="faq">
+                <span class="text-base sm:text-lg font-semibold tracking-tight text-gray-900 font-geist">Do you offer ongoing support after launch?</span>
+                <span class="shrink-0">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" data-icon="plus" class="lucide lucide-plus w-5 h-5 stroke-1.5"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="minus" data-icon="minus" class="lucide lucide-minus w-5 h-5 stroke-1.5 hidden"><path d="M5 12h14"></path></svg>
+                </span>
+              </button>
+              <div class="px-5 pb-5 text-sm text-gray-600 font-geist hidden" data-qa="a">
+                30 days of support included for bug fixes and tweaks. After that, monthly retainers start at $3k for ongoing optimization, feature additions, and technical marketing. Most clients stick around because the ROI is clear.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Initialize open states
+      document.querySelectorAll('#faq [data-accordion-item]').forEach(item => {
+        const open = item.hasAttribute('data-open');
+        const btn = item.querySelector('[data-accordion="faq"]');
+        const a = item.querySelector('[data-qa="a"]');
+        const plus = item.querySelector('[data-icon="plus"]');
+        const minus = item.querySelector('[data-icon="minus"]');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        a.classList.toggle('hidden', !open);
+        plus.classList.toggle('hidden', open);
+        minus.classList.toggle('hidden', !open);
+      });
+
+      // Toggle behavior
+      document.querySelectorAll('#faq [data-accordion="faq"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const item = btn.closest('[data-accordion-item]');
+          const content = item.querySelector('[data-qa="a"]');
+          const plus = item.querySelector('[data-icon="plus"]');
+          const minus = item.querySelector('[data-icon="minus"]');
+          const expanded = btn.getAttribute('aria-expanded') === 'true';
+          btn.setAttribute('aria-expanded', String(!expanded));
+          content.classList.toggle('hidden');
+          plus.classList.toggle('hidden');
+          minus.classList.toggle('hidden');
+        });
+      });
+
+      // Render icons (safe to call multiple times)
+      if (window.lucide && typeof lucide.createIcons === 'function') {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</section><section id="pricing" class="max-w-7xl sm:px-6 sm:mt-20 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+  <div class="relative overflow-hidden rounded-[40px] border border-white/20 bg-neutral-950 text-white shadow-[0_8px_30px_rgba(0,0,0,0.18)]">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_-20%,rgba(255,255,255,0.08),transparent_60%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_80%_120%,rgba(255,255,255,0.06),transparent_60%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(#ffffff0d_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]"></div>
+    </div>
+
+    <div class="relative sm:p-8 pt-6 pr-6 pb-6 pl-6">
+      <div class="flex items-center gap-2 text-sm text-white/70 font-geist">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" class="lucide lucide-plus w-4 h-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+        <span class="font-geist">Transparent rates</span>
+      </div>
+
+      <div class="text-center mt-2">
+        <h2 class="text-[56px] sm:text-[80px] leading-none font-semibold tracking-tighter font-geist">Pricing.</h2>
+        <div class="inline-flex gap-1 ring-1 ring-white/10 bg-white/10 rounded-full mt-5 pt-1 pr-1 pb-1 pl-1 items-center">
+          <button type="button" data-mode-button="project" class="text-sm text-gray-900 tracking-tight font-geist bg-white rounded-full pt-1.5 pr-3 pb-1.5 pl-3">Fixed price</button>
+          <button type="button" data-mode-button="monthly" class="text-sm tracking-tight font-geist rounded-full pt-1.5 pr-3 pb-1.5 pl-3 text-white/80">Retainer</button>
+        </div>
+      </div>
+
+      <div class="ring-1 ring-white/10 sm:p-6 bg-white/5 rounded-3xl mt-8 pt-4 pr-4 pb-4 pl-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 sm:gap-6 items-stretch">
+          <!-- Upsell -->
+          <div class="md:col-span-4">
+            <div class="h-full rounded-2xl bg-black/30 ring-1 ring-white/10 p-5 flex flex-col justify-between">
+              <div class="">
+                <p class="text-base font-medium tracking-tight font-geist">Need growth acceleration?</p>
+                <p class="mt-2 text-sm text-white/70 font-geist">Add strategic marketing and SEO optimization.</p>
+              </div>
+              <div class="mt-8 flex items-center justify-between">
+                <div class="text-sm font-geist">
+                  <span class="text-white/90">+ $1,850</span>
+                </div>
+                <button type="button" role="switch" aria-checked="false" data-upsell-switch="" class="inline-flex h-6 w-11 ring-1 ring-white/10 transition-colors duration-200 bg-white/10 rounded-full items-center">
+                  <span data-upsell-knob="" class="h-4 w-4 rounded-full bg-white transition-transform duration-200 translate-x-0"></span>
+                  <span class="sr-only">Toggle Growth Package add-on</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Price -->
+          <div class="md:col-span-4">
+            <div class="h-full rounded-2xl bg-black/30 ring-1 ring-white/10 p-5 flex flex-col">
+              <div class="flex-1">
+                <div class="flex items-end gap-2">
+                  <div class="text-5xl sm:text-6xl lg:text-7xl font-semibold tracking-tighter tabular-nums font-geist" data-amount="">$3,200</div>
+                  <div class="pb-2 text-white/60 text-base font-geist" data-period="">/project</div>
+                </div>
+              </div>
+              <div class="mt-8 pt-4 border-t border-white/10 text-xs text-white/70 flex items-center justify-between font-geist">
+                <span data-delivery-key="">Timeline</span>
+                <span data-delivery-val="">4–6 weeks</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features + CTA -->
+          <div class="md:col-span-4">
+            <div class="h-full rounded-2xl bg-black/30 ring-1 ring-white/10 p-5 flex flex-col">
+              <ul class="space-y-3">
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" class="lucide lucide-plus w-5 h-5 text-white/80"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <span class="text-sm font-geist">Complete visual brand system</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" class="lucide lucide-plus w-5 h-5 text-white/80"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <span class="text-sm font-geist">Custom website or digital product</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" class="lucide lucide-plus w-5 h-5 text-white/80"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                  <span class="text-sm font-geist">Launch support and guidelines</span>
+                </li>
+              </ul>
+
+              <div class="mt-auto">
+                <a href="#contact" class="mt-6 w-full inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-medium tracking-tight text-gray-900 bg-white hover:bg-white/90 transition-colors border border-white/10">
+                  <span class="font-geist">Start conversation</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="arrow-right" class="lucide lucide-arrow-right w-4 h-4"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom note -->
+      <p class="mt-4 text-[11px] text-white/50 font-geist text-center">Clear pricing, no surprises. Every project is scoped individually for your unique needs.</p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function initPricing() {
+        const root = document.getElementById('pricing');
+        if (!root) return;
+
+        const amountEl = root.querySelector('[data-amount]');
+        const periodEl = root.querySelector('[data-period]');
+        const deliveryKeyEl = root.querySelector('[data-delivery-key]');
+        const deliveryValEl = root.querySelector('[data-delivery-val]');
+        const btnProject = root.querySelector('[data-mode-button="project"]');
+        const btnMonthly = root.querySelector('[data-mode-button="monthly"]');
+        const upsellSwitch = root.querySelector('[data-upsell-switch]');
+        const upsellKnob = root.querySelector('[data-upsell-knob]');
+
+        const prices = { project: 3200, monthly: 4500 };
+        const addon = 1850;
+        const state = { mode: 'project', upsell: false };
+
+        function money(n) {
+          return n.toLocaleString('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 0 });
+        }
+
+        function render() {
+          const base = prices[state.mode];
+          const total = base + (state.upsell ? addon : 0);
+          amountEl.textContent = money(total);
+          periodEl.textContent = state.mode === 'project' ? '/project' : '/month';
+          deliveryKeyEl.textContent = state.mode === 'project' ? 'Timeline' : 'Commitment';
+          deliveryValEl.textContent = state.mode === 'project' ? '4–6 weeks' : '3 month minimum';
+
+          // Segmented control visuals
+          btnProject.classList.toggle('bg-white', state.mode === 'project');
+          btnProject.classList.toggle('text-gray-900', state.mode === 'project');
+          btnProject.classList.toggle('text-white/80', state.mode !== 'project');
+
+          btnMonthly.classList.toggle('bg-white', state.mode === 'monthly');
+          btnMonthly.classList.toggle('text-gray-900', state.mode === 'monthly');
+          btnMonthly.classList.toggle('text-white/80', state.mode !== 'monthly');
+
+          // Upsell switch visuals
+          upsellSwitch.setAttribute('aria-checked', state.upsell ? 'true' : 'false');
+          upsellSwitch.classList.toggle('bg-white', state.upsell);
+          upsellSwitch.classList.toggle('bg-white/10', !state.upsell);
+          upsellKnob.classList.toggle('translate-x-5', state.upsell);
+          upsellKnob.classList.toggle('translate-x-0', !state.upsell);
+        }
+
+        btnProject.addEventListener('click', () => { state.mode = 'project'; render(); });
+        btnMonthly.addEventListener('click', () => { state.mode = 'monthly'; render(); });
+        upsellSwitch.addEventListener('click', () => { state.upsell = !state.upsell; render(); });
+
+        render();
+        if (window.lucide && typeof lucide.createIcons === 'function') lucide.createIcons();
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPricing, { once: true });
+      } else {
+        initPricing();
+      }
+    })();
+  </script>
+</section>
+
+    <!-- Footer -->
+    <footer class="max-w-7xl sm:px-6 sm:mt-24 mt-8 mr-auto mb-8 ml-auto pr-4 pl-4">
+        <div class="relative overflow-hidden sm:p-8 shadow-[0_8px_30px_rgba(0,0,0,0.08)] shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)] bg-white border-white/20 border rounded-[40px] pt-6 pr-6 pb-6 pl-6">
+            <div class="absolute inset-0 pointer-events-none">
+                <div class="absolute inset-0 bg-gradient-to-b from-white/10 via-white/5 to-transparent"></div>
+            </div>
+            <div class="relative">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+                    <div class="">
+                        <p class="text-sm text-gray-500 font-geist">Ready to create something amazing?</p>
+                        <h3 class="mt-1 text-xl sm:text-2xl text-gray-900 font-geist tracking-tighter">Let's bring your vision to life.</h3>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <a href="mailto:hi@broke.dev" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium tracking-tight text-gray-700 bg-gray-100 hover:bg-gray-200 border border-white/20">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" class="lucide lucide-mail w-4 h-4 stroke-1.5"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+                            <span class="font-geist">hi@broke.dev</span>
+                        </a>
+                        <a href="#" class="inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium tracking-tight text-white bg-blue-600 hover:bg-blue-700 border border-white/10">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="message-circle" class="lucide lucide-message-circle w-4 h-4 stroke-1.5"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
+                            <span class="font-geist">Start Project</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </footer><div class="max-w-7xl sm:px-6 sm:mt-10 mt-8 mr-auto mb-16 ml-auto pr-4 pl-4">
+  <div class="relative overflow-hidden rounded-[40px] border border-white/10 bg-neutral-950 text-white shadow-[0_8px_30px_rgba(0,0,0,0.18)] p-6 sm:p-8">
+    <div class="absolute inset-0 pointer-events-none">
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_20%_-20%,rgba(255,255,255,0.06),transparent_60%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(1200px_600px_at_80%_120%,rgba(255,255,255,0.05),transparent_60%)]"></div>
+      <div class="absolute inset-0 bg-[radial-gradient(#ffffff0d_1px,transparent_1px)] [background-size:20px_20px] opacity-[0.15]"></div>
+    </div>
+
+    <div class="relative">
+      <h2 class="text-[16vw] sm:text-[12vw] lg:text-[9vw] leading-[0.9] font-semibold tracking-tighter font-geist">
+        <span class="block">Ready to build</span>
+        <span class="block text-white/60">something extraordinary?</span>
+      </h2>
+
+      <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+  <!-- Email -->
+  <div class="">
+    <p class="text-sm text-white/60 font-geist">Get Started</p>
+    <a href="mailto:hi@broke.dev" class="mt-2 inline-flex items-center gap-3 text-xl sm:text-2xl font-medium tracking-tight text-white font-geist">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="mail" class="lucide lucide-mail w-5 h-5 stroke-[1.5] flex-shrink-0"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
+      <span class="break-all">hi@broke.dev</span>
+    </a>
+  </div>
+
+  <!-- Call -->
+  <div class="">
+    <p class="text-sm text-white/60 font-geist">Schedule a Call</p>
+    <a href="#contact" class="inline-flex items-center gap-2 hover:bg-white/90 transition-colors duration-200 text-sm font-medium text-gray-900 tracking-tight bg-white border-white/10 border rounded-full mt-2 pt-3 pr-5 pb-3 pl-5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" class="lucide lucide-calendar"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path></svg>
+      <span class="font-geist">Book a Meeting</span>
+    </a>
+  </div>
+
+  <!-- Social -->
+  <div class="">
+    <p class="text-sm text-white/60 font-geist">Follow Along</p>
+    <div class="flex flex-wrap gap-3 mt-2 items-center">
+      <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-gray-900 tracking-tight bg-white border-white/10 border rounded-full pt-3 pr-4 pb-3 pl-4 hover:bg-white/90 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="twitter" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
+        <span class="font-geist">2,843</span>
+      </a>
+      <a href="#" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-gray-900 border border-white/10 hover:bg-white/90 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="instagram" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+      </a>
+      <a href="#" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-gray-900 border border-white/10 hover:bg-white/90 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="dribbble" class="lucide lucide-dribbble"><circle cx="12" cy="12" r="10"></circle><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"></path><path d="M21.75 12.84c-6.62-1.41-12.14 1-16.38 6.32"></path><path d="M8.56 2.75c4.37 6 6 9.42 8 17.72"></path></svg>
+      </a>
+      <a href="#" class="inline-flex items-center justify-center w-12 h-12 text-gray-900 bg-white border-white/10 border rounded-full hover:bg-white/90 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-behance" data-lucide="behance"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" class=""></path><path d="m10 15 5-3-5-3z" class=""></path></svg>
+      </a>
+      <a href="#" class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-white text-gray-900 border border-white/10 hover:bg-white/90 transition-colors duration-200">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" data-lucide="linkedin" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+      <div class="mt-8 border-t border-white/10"></div>
+
+      <div class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Menu -->
+        <div class="">
+          <p class="text-sm text-white/60 font-geist">Explore</p>
+          <div class="mt-3 grid grid-cols-2 gap-2 text-sm">
+            <a href="#work" class="font-medium tracking-tight hover:underline font-geist">Our Work</a>
+            <a href="#services" class="font-medium tracking-tight hover:underline font-geist">What We Do</a>
+            <a href="#pricing" class="font-medium tracking-tight hover:underline font-geist">Investment</a>
+            <a href="#blog" class="font-medium tracking-tight hover:underline font-geist">Insights</a>
+          </div>
+        </div>
+
+        <!-- Legal -->
+        <div class="">
+          <p class="text-sm text-white/60 font-geist">Fine Print</p>
+          <div class="mt-3 grid grid-cols-1 gap-2 text-sm">
+            <a href="#" class="font-medium tracking-tight hover:underline font-geist">Terms &amp; Conditions</a>
+            <a href="#" class="font-medium tracking-tight hover:underline font-geist">Privacy Notice</a>
+          </div>
+        </div>
+      </div>
+
+      <p class="mt-6 text-center text-xs text-white/70 font-geist">© <span id="year">2025</span> BROKE Studio — Shopify development that drives revenue</p>
+    </div>
+  </div>
+</div>
+
+    <script>
+        // Render Lucide icons
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+
+        // Live local time
+        const timeEl = document.getElementById('localTime');
+        function updateClock() {
+            const d = new Date();
+            const hh = String(d.getHours()).padStart(2, '0');
+            const mm = String(d.getMinutes()).padStart(2, '0');
+            const ss = String(d.getSeconds()).padStart(2, '0');
+            timeEl.textContent = `${hh}:${mm}:${ss}`;
+        }
+        updateClock();
+        setInterval(updateClock, 1000);
+
+        // Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
+
+</body></html>

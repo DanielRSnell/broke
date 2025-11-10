@@ -1,0 +1,13 @@
+/* Icon Component Styles */
+
+/* Small icon size (16px) */
+.icon-sm {
+  width: 16px;
+  height: 16px;
+}
+
+/* SVG stroke width utility */
+.svg-stroke-1\.5 svg,
+svg.svg-stroke-1\.5 {
+  stroke-width: 1.5;
+}

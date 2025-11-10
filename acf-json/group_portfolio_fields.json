@@ -1,0 +1,381 @@
+{
+    "key": "group_portfolio_fields",
+    "title": "Portfolio Fields",
+    "fields": [
+        {
+            "key": "field_portfolio_tab_details",
+            "label": "Project Details",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_portfolio_client_name",
+            "label": "Client Name",
+            "name": "client_name",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Name of the client or company",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "Client Name",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_portfolio_tags",
+            "label": "Skills/Technologies",
+            "name": "skills_technologies",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Comma-separated list of skills or technologies used",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "WordPress, React, Tailwind CSS, etc.",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_portfolio_show_gallery",
+            "label": "Show Project Gallery",
+            "name": "show_gallery",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable to show a project gallery",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_portfolio_gallery",
+            "label": "Project Gallery",
+            "name": "project_gallery",
+            "aria-label": "",
+            "type": "gallery",
+            "instructions": "Images showcasing the project",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_portfolio_show_gallery",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "library": "all",
+            "min": "",
+            "max": "",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": "jpg,jpeg,png,gif,webp",
+            "insert": "append",
+            "preview_size": "medium"
+        },
+        {
+            "key": "field_portfolio_show_client",
+            "label": "Show Client Section",
+            "name": "show_client",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Enable to show client testimonial",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "Yes",
+            "ui_off_text": "No"
+        },
+        {
+            "key": "field_portfolio_testimonial",
+            "label": "Client Testimonial",
+            "name": "testimonial",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "Client testimonial for this portfolio item",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_portfolio_show_client",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_portfolio_testimonial_quote",
+                    "label": "Quote",
+                    "name": "quote",
+                    "aria-label": "",
+                    "type": "textarea",
+                    "instructions": "The testimonial quote",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "rows": 4,
+                    "placeholder": "Enter testimonial quote...",
+                    "new_lines": "br",
+                    "parent": "field_portfolio_testimonial"
+                },
+                {
+                    "key": "field_portfolio_testimonial_author",
+                    "label": "Author Name",
+                    "name": "author_name",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Name of the person giving the testimonial",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "John Doe",
+                    "prepend": "",
+                    "append": "",
+                    "parent": "field_portfolio_testimonial"
+                },
+                {
+                    "key": "field_portfolio_testimonial_position",
+                    "label": "Author Position",
+                    "name": "author_position",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "Job title and company",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "CEO, Company Name",
+                    "prepend": "",
+                    "append": "",
+                    "parent": "field_portfolio_testimonial"
+                },
+                {
+                    "key": "field_portfolio_testimonial_photo",
+                    "label": "Author Photo",
+                    "name": "author_photo",
+                    "aria-label": "",
+                    "type": "image",
+                    "instructions": "Photo of the testimonial author",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "jpg,jpeg,png,webp",
+                    "preview_size": "thumbnail",
+                    "parent": "field_portfolio_testimonial"
+                }
+            ]
+        },
+        {
+            "key": "field_portfolio_tab_link",
+            "label": "Project Link",
+            "name": "",
+            "aria-label": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_portfolio_link_type",
+            "label": "Link Type",
+            "name": "link_type",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Choose where this project links to",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "none": "No Link",
+                "external": "External URL",
+                "prototype": "Internal Prototype"
+            },
+            "default_value": "none",
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_portfolio_link_external",
+            "label": "External URL",
+            "name": "link_external_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "Full URL to the external project",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_portfolio_link_type",
+                        "operator": "==",
+                        "value": "external"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "https://example.com"
+        },
+        {
+            "key": "field_portfolio_link_prototype",
+            "label": "Prototype Template",
+            "name": "link_prototype_template",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "Select which prototype template to link to",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_portfolio_link_type",
+                        "operator": "==",
+                        "value": "prototype"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {},
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 1,
+            "ui": 1,
+            "ajax": 0,
+            "placeholder": "Select a prototype..."
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "Custom fields for portfolio items including testimonials, write-ups, and galleries",
+    "show_in_rest": 1,
+    "display_title": "",
+    "acfe_autosync": [
+        "json"
+    ],
+    "acfe_form": 0,
+    "acfe_display_title": "",
+    "acfe_meta": "",
+    "acfe_note": "",
+    "modified": 1730000000
+}

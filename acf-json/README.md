@@ -43,85 +43,141 @@ When ACF loads:
 
 ## Creating Custom Post Types
 
-### Method 1: ACF UI (Recommended)
+### JSON File Structure
 
-1. **In WordPress Admin:**
-   - Go to `ACF → Post Types`
-   - Click "Add New Post Type"
-   - Configure:
-     - Post Type Key: `portfolio` (singular, lowercase, no spaces)
-     - Plural Label: `Portfolio Items`
-     - Singular Label: `Portfolio Item`
-     - Slug: `portfolio` (for URLs)
-   - Advanced settings:
-     - Supports: title, editor, thumbnail, excerpt
-     - Show in REST: Yes (for Gutenberg)
-     - Has Archive: Yes (if you want /portfolio/ archive page)
+Create `acf-json/post-type_[key].json` following this exact format:
 
-2. **Save** - ACF automatically creates `post_type_[key].json` in this directory
-
-3. **Commit to Git:**
-   ```bash
-   git add acf-json/post_type_portfolio.json
-   git commit -m "Add Portfolio custom post type"
-   ```
-
-### Method 2: PHP Registration (Alternative)
-
-If you prefer PHP over ACF UI:
-
-```php
-// src/extensions/custom-post-types.php
-add_action('init', function() {
-    register_post_type('portfolio', [
-        'labels' => [
-            'name' => 'Portfolio',
-            'singular_name' => 'Portfolio Item'
-        ],
-        'public' => true,
-        'has_archive' => true,
-        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],
-        'show_in_rest' => true,
-        'menu_icon' => 'dashicons-portfolio'
-    ]);
-});
+```json
+{
+    "key": "post_type_portfolio",
+    "title": "Portfolio",
+    "menu_order": 0,
+    "active": true,
+    "post_type": "portfolio",
+    "advanced_configuration": true,
+    "import_source": "",
+    "import_date": "",
+    "labels": {
+        "name": "Portfolio",
+        "singular_name": "Work",
+        "menu_name": "Portfolio",
+        "all_items": "All Works",
+        "edit_item": "Edit Work",
+        "view_item": "View Work",
+        "add_new_item": "Add New Work",
+        // ... additional labels
+    },
+    "description": "Portfolio post type description",
+    "public": true,
+    "hierarchical": false,
+    "show_ui": true,
+    "show_in_menu": true,
+    "show_in_rest": true,
+    "menu_position": "5",
+    "menu_icon": {
+        "type": "dashicons",
+        "value": "dashicons-portfolio"
+    },
+    "supports": [
+        "title",
+        "editor",
+        "thumbnail",
+        "excerpt",
+        "custom-fields"
+    ],
+    "taxonomies": ["category"],
+    "has_archive": true,
+    "has_archive_slug": "portfolio",
+    "rewrite": {
+        "permalink_rewrite": "post_type_key",
+        "with_front": "1",
+        "feeds": "0",
+        "pages": "1"
+    },
+    "modified": 1731093600
+}
 ```
 
-**ACF UI vs PHP:**
-- **ACF UI:** Easier for non-developers, auto-generates JSON, visual interface
-- **PHP:** More control, better for complex logic, no UI dependency
+**Key Fields:**
+- `key`: Unique identifier (format: `post_type_[slug]`)
+- `title`: Display name in admin
+- `post_type`: The post type slug (lowercase, no spaces)
+- `advanced_configuration`: Must be `true` for ACF
+- `menu_icon`: Object with `type` and `value` properties
+- `supports`: Array of features (must include "custom-fields" for ACF)
+- `taxonomies`: Array of associated taxonomies
+
+**Example:** See `includes/acf-examples/post_type_portfolio.json`
 
 ---
 
 ## Creating Field Groups
 
-### Step 1: Create Field Group via ACF UI
+### JSON File Structure
 
-1. **In WordPress Admin:**
-   - Go to `ACF → Field Groups`
-   - Click "Add New"
-   - Title: `Portfolio Details`
+Create `acf-json/group_[name].json` following this exact format:
 
-2. **Add Fields:**
-   - Click "Add Field"
-   - Examples:
-     - Client Name (Text)
-     - Project URL (URL)
-     - Completion Date (Date Picker)
-     - Featured (True/False)
-
-3. **Set Location Rules:**
-   - Show this field group if:
-     - Post Type is equal to Portfolio
-
-4. **Save** - ACF creates `group_[hash].json` in this directory
-
-### Step 2: Commit to Version Control
-
-```bash
-git add acf-json/group_*.json
-git commit -m "Add Portfolio Details field group"
+```json
+{
+    "key": "group_portfolio_fields",
+    "title": "Portfolio Fields",
+    "fields": [
+        {
+            "key": "field_portfolio_tab_details",
+            "label": "Project Details",
+            "name": "",
+            "type": "tab",
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_portfolio_client_name",
+            "label": "Client Name",
+            "name": "client_name",
+            "type": "text",
+            "instructions": "Name of the client",
+            "wrapper": {
+                "width": "50"
+            },
+            "placeholder": "Client Name"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "portfolio"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "left",
+    "instruction_placement": "label",
+    "active": true,
+    "show_in_rest": 1,
+    "acfe_autosync": ["json"],
+    "modified": 1731093600
+}
 ```
+
+**Key Fields:**
+- `key`: Unique identifier (format: `group_[name]`)
+- `title`: Field group display name
+- `fields`: Array of field objects
+- `location`: Array of location rule arrays (when to show this group)
+- `menu_order`: Display order (lower = higher priority)
+- `position`: Where to show (normal, acf_after_title, side)
+- `label_placement`: left, top
+- `acfe_autosync`: Must include ["json"] for auto-sync
+- `show_in_rest`: Set to 1 for Gutenberg compatibility
+
+**Tab Fields:**
+Tabs have no `name` field and `type: "tab"`. Use `endpoint: 0` for regular tabs.
+
+**Example:** See `includes/acf-examples/group_portfolio_fields.json`
 
 ### Common Field Types
 
@@ -246,38 +302,64 @@ This violates MVC principles. Always prefer context filters for maintainability.
 
 ## Creating Taxonomies
 
-Taxonomies are ways to group and classify posts (like categories and tags).
+### JSON File Structure
 
-### Method 1: ACF UI
+Create `acf-json/taxonomy_[key].json` following this exact format:
 
-1. **In WordPress Admin:**
-   - Go to `ACF → Taxonomies`
-   - Click "Add New Taxonomy"
-   - Configure:
-     - Taxonomy Key: `project_type`
-     - Plural Label: `Project Types`
-     - Singular Label: `Project Type`
-     - Post Types: Select `portfolio`
-   - Hierarchical: Yes (like categories) or No (like tags)
-
-2. **Save** - creates `taxonomy_[key].json`
-
-### Method 2: PHP Registration
-
-```php
-// src/extensions/custom-taxonomies.php
-add_action('init', function() {
-    register_taxonomy('project_type', 'portfolio', [
-        'labels' => [
-            'name' => 'Project Types',
-            'singular_name' => 'Project Type'
-        ],
-        'hierarchical' => true,  // Like categories
-        'show_in_rest' => true,
-        'rewrite' => ['slug' => 'project-type']
-    ]);
-});
+```json
+{
+    "key": "taxonomy_project_type",
+    "title": "Project Types",
+    "menu_order": 0,
+    "active": true,
+    "taxonomy": "project_type",
+    "advanced_configuration": true,
+    "import_source": "",
+    "import_date": "",
+    "labels": {
+        "name": "Project Types",
+        "singular_name": "Project Type",
+        "menu_name": "Project Types",
+        "all_items": "All Project Types",
+        "edit_item": "Edit Project Type",
+        "add_new_item": "Add New Project Type",
+        // ... additional labels
+    },
+    "description": "Categorize projects by type",
+    "public": true,
+    "publicly_queryable": true,
+    "hierarchical": true,
+    "show_ui": true,
+    "show_in_menu": true,
+    "show_in_rest": true,
+    "rest_base": "project_type",
+    "rest_controller_class": "WP_REST_Terms_Controller",
+    "rest_namespace": "wp\/v2",
+    "show_tagcloud": true,
+    "show_in_quick_edit": true,
+    "show_admin_column": true,
+    "object_types": [
+        "project"
+    ],
+    "rewrite": {
+        "permalink_rewrite": "taxonomy_key",
+        "with_front": "1",
+        "hierarchical": "0"
+    },
+    "query_var": "taxonomy_key",
+    "modified": 1731093600
+}
 ```
+
+**Key Fields:**
+- `key`: Unique identifier (format: `taxonomy_[slug]`)
+- `title`: Display name in admin
+- `taxonomy`: The taxonomy slug (lowercase, no spaces)
+- `advanced_configuration`: Must be `true` for ACF
+- `hierarchical`: `true` for category-like, `false` for tag-like
+- `object_types`: Array of post types this taxonomy applies to
+- `show_admin_column`: Show taxonomy column in post list
+- `rest_namespace`: Must escape forward slash as `wp\/v2`
 
 ### Using Taxonomies in Templates
 

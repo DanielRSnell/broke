@@ -5,18 +5,18 @@
  * Context: posts (array of Timber\Post objects), title (archive title)
  */
 #}
+{% extends "layouts/base.twig" %}
 
-{% include 'partials/header.twig' %}
-
-<main class="site-main">
+{% block content %}
+<main class="flex-grow">
 	<div class="archive-container">
 		{% include 'partials/archive-header.twig' %}
 
 		<div class="archive-posts">
-			{# Archive posts loop #}
-
+			{% for post in posts %}
+				{% include 'partials/post-card.twig' with { post: post } %}
+			{% endfor %}
 		</div>
 	</div>
 </main>
-
-{% include 'partials/footer.twig' %}
+{% endblock %}

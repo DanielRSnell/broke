@@ -6,9 +6,30 @@
  */
 #}
 
-<header class="site-header">
-	<div class="container">
-		{# Site header content #}
+  {% include '/partials/background-effect.twig' %}
 
+  <!-- Header -->
+	<div class="relative z-10 sm:px-6 md:px-10 backdrop-blur w-full max-w-7xl border-zinc-50/10 border rounded-3xl mt-6 mb-24 mr-auto ml-auto pt-4 pr-4 pb-4 pl-4">
+		<div  class="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
+	<div  class="absolute left-0 bottom-0 w-[60%] h-[80%] rounded-[40%] bg-gradient-to-tr from-white/5 to-transparent blur-3xl"></div>
 	</div>
-</header>
+		
+		<div class="flex flex-col md:flex-row gap-4 items-center justify-between">
+	<div class="flex items-center gap-3">
+		<a href="/" class="inline-flex items-center justify-center" aria-label="Home">
+		<img src="{{ site.theme.link }}/public/BROKE.svg" alt="BROKE" class="h-10 w-auto" fetchpriority="high" />
+		</a>
+	</div>
+
+	<nav class="hidden md:flex items-center gap-6 text-sm text-neutral-300">
+		<a href="/portfolio" class="hover:text-white transition-colors hover:scale-105 duration-200 font-medium">Portfolio</a>
+		<a href="/about" class="hover:text-white transition-colors hover:scale-105 duration-200 font-medium">About</a>
+		<a href="/services" class="hover:text-white transition-colors hover:scale-105 duration-200 font-medium">Services</a>
+		<a href="/contact" class="hover:text-white transition-colors hover:scale-105 duration-200 font-medium">Contact</a>
+	</nav>
+
+	<a href="https://wellfound.com/u/daniel-r-snell-1" target="_blank" rel="noopener" class="btn-gradient mt-0">
+	<span>Resume</span>
+	</a>
+	</div>
+</div>
